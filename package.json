@@ -1,0 +1,19 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "description": "proyecto de documentacion relevante acerca de tecnologias informaticas",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "docs"
+  ],
+  "author": "jasvdev",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "prettier": "^3.0.3"
+  }
+}

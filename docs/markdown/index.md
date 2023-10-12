@@ -3,16 +3,19 @@
 
 <!-- Index link's -->
 <!-- Espacio para indexar los links externos usados en el archivo -->
+
+[🔙 Doc]: ../index.md
 [gitlab_doc]: https://docs.gitlab.com/ee/ "GitLab Documentation"
 
 <!-- Index Imagen -->
 <!-- Espacio para indexar las imagenes usadas en el archivo -->
+
 [img_0]: ./assets/icon-doc.svg.png
 [img_1]: ./assets/icon-doc.svg.png "GitGub vs GitLab"
 [tag_0]: https://img.shields.io/badge/pedro-test-blue.svg "hola"
 
 # Tabla de contenido
-
+<sup>[🔙 Doc]</sup>
 - [Tabla de contenido](#tabla-de-contenido)
 - [Titulos](#titulos)
 - [Lineas horizontales](#lineas-horizontales)
@@ -32,6 +35,8 @@
 - [Imagenes](#imagenes)
 
 # Titulos
+
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 `# ♻️ h1`
@@ -53,6 +58,7 @@ esto es un texto normal
 ---
 
 # Citas
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 > La vida es muy corta para aprender alemán. -Tad Marburg
@@ -76,6 +82,7 @@ esto es un texto normal
 > Fin
 
 # Texto
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 _énfasis_ (cursiva)
@@ -93,6 +100,7 @@ Saltos de linea
 <br>
 
 # Codigo
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 > `console.log(lAlgo);`
@@ -114,6 +122,7 @@ console.log(lAlgo);
 asp, c, C++, cs, csharp, cmd, css, csv, bash, diff, elixir, erb, go, haml, http, java, javascript, json, jsx, less, markdown, matlab, nginx, objectivec, PHP, python, rust, salt, shell, sh, zsh, bash, scss, sql, svg, swift, rb, jruby, vim, vue, xml, yaml
 
 # Listas
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 - Un elemento en una lista no ordenada
@@ -130,6 +139,7 @@ asp, c, C++, cs, csharp, cmd, css, csv, bash, diff, elixir, erb, go, haml, http,
 2. Otro elemento
 
 # Html
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 <p align="center" width="300">
@@ -157,16 +167,18 @@ asp, c, C++, cs, csharp, cmd, css, csv, bash, diff, elixir, erb, go, haml, http,
   <img height="60" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png">
   <h1>Preguntas de entrevista para React</h1>
 
-  <i>De cero a experto. Con respuestas detalladas en Español 🇪🇸</i>
+<i>De cero a experto. Con respuestas detalladas en Español 🇪🇸</i>
 
-  <sup>Deja tu ⭐ si te gusta el proyecto.</sup>
+<sup>Deja tu ⭐ si te gusta el proyecto.</sup>
 
-  <strong>[🏠 Inicio](#tabla-de-contenido)</strong>
+<strong>[🏠 Inicio](#tabla-de-contenido)</strong>
 
-  **[⬆️ Volver a índice](#tabla-de-contenido)**
+**[⬆️ Volver a índice](#tabla-de-contenido)**
+
 </div>
 
 # Enlaces
+
 Enlace menor
 
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
@@ -188,6 +200,7 @@ Enlace menor
 <br>
 
 # Tablas
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 | Comando                              | Descripcion |
@@ -209,6 +222,7 @@ This is a regular paragraph.
 </table>
 
 # Tags interactivas
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 https://shields.io/
 
@@ -232,8 +246,8 @@ https://shields.io/
 
 ![npm](https://img.shields.io/npm/v/react)
 
-
 # Cards Interactivas GitHub
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 https://github-readme-stats.vercel.app/
@@ -247,9 +261,11 @@ https://github-readme-stats.vercel.app/
 ![Mi Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&theme=react)
 
 # Imagenes
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 Imagen centrada, por tamaño controlado
+
 <p align="center">
   <img src="./assets/icon-doc.svg.png" width="100" alt="light bulb icon">
 </p>
@@ -260,5 +276,3 @@ Imagen centrada, tamaño por defecto
 Imagen centrada, tamaño por defecto - Linkeada
 
 ![img_0]
-
-
