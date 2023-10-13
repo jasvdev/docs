@@ -7,7 +7,8 @@
 [Git]: ./Git/index.md
 [Markdown]: ./markdown/index.md
 [NodeJs]: ./nodejs/index.md
-[ProtocolosWeb]: ./protocolos/index.md
+[Protocolos]: ./protocolos/index.md
+[Templates]: ./templates/index.md
 [VsCode]: ./vsCode/index.md
 
 <!-- Index Imagen -->
@@ -20,5 +21,6 @@
 - [Git]
 - [Markdown]
 - [NodeJs]
-- [ProtocolosWeb]
+- [Protocolos]
+- [Templates]
 - [VsCode]
