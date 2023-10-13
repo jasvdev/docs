@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/jasvdev/dev-docs/compare/v1.1.2...v1.1.3) (2023-10-13)
+
+### Bug Fixes
+
+- **:bug::** update scripts changelogs ([89900bf](https://github.com/jasvdev/dev-docs/commit/89900bf16545bb002aecc613206dd59d67f3ffc8))
+- **:bug::** update scripts changelogs ([8b049f0](https://github.com/jasvdev/dev-docs/commit/8b049f0692e98781506126083aa340cb2f2f8a45))
+
 ## [1.1.2](https://github.com/jasvdev/dev-docs/compare/v1.1.1...v1.1.2) (2023-10-13)
 
 ### Bug Fixes
