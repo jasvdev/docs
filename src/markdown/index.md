@@ -15,7 +15,9 @@
 [tag_0]: https://img.shields.io/badge/pedro-test-blue.svg "hola"
 
 # Tabla de contenido
+
 <sup>[🔙 Doc]</sup>
+
 - [Tabla de contenido](#tabla-de-contenido)
 - [Titulos](#titulos)
 - [Lineas horizontales](#lineas-horizontales)
@@ -35,7 +37,6 @@
 - [Imagenes](#imagenes)
 
 # Titulos
-
 
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 

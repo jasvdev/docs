@@ -13,9 +13,12 @@
 [img_0]: ./assets/icon-doc.svg.png
 
 # Tabla de contenido
+
 <sup>[🔙 Doc]</sup>
+
 - [Tabla de contenido](#tabla-de-contenido)
 - [init](#init)
 
 # init
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>

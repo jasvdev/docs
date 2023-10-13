@@ -6,10 +6,7 @@
 
 [🔙 Doc]: ../index.md
 [NodeJs]: https://nodejs.org/es "NodeJs Org"
-[Husky]: https://typicode.github.io/husky/getting-started.html
-[Hooks]: https://git-scm.com/docs/githooks
 [Npm]: https://docs.npmjs.com/
-[Prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 
 <!-- Index Imagen -->
 <!-- Espacio para indexar las imagenes usadas en el archivo -->
@@ -17,13 +14,15 @@
 [img_0]: ./assets/icon-doc.svg.png
 
 # Tabla de contenido
+
 <sup>[🔙 Doc]</sup>
+
 - [Tabla de contenido](#tabla-de-contenido)
 - [Instalacion](#instalacion)
 - [Comandos utiles](#comandos-utiles)
-- [Proyecto Markdown + Prettier + Husky](#proyecto-markdown--prettier--husky)
 
 # Instalacion
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 Realiza la instalacion por medio del siguiente enlace [NodeJs], segun tu SO.
@@ -33,6 +32,7 @@ Recuerda siempre utilizar la version LTS, que es la mas estable y con mas soport
 Al mismo tiempo ya tienes tu gestionador de paquetes [Npm]
 
 Esto lo podemos comprobar con los siguientes comandos
+
 ```bash
 $ node -v
 > v18.18.0
@@ -42,6 +42,7 @@ $ npm -v
 ```
 
 # Comandos utiles
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 | Comando                              | Descripcion                                                                                                            |
@@ -65,37 +66,4 @@ $ npm -v
 | `npm link `                          | Se usa para crear un link virtual del compilado de nuestro proyecto al hacer `npm run build`                           |
 | `npm link {Package}`                 | Se usa para instalar una libreria la cual tenga un link virtual activo por medio de su nombre                          |
 | `npm unlink `                        | Se usa para crear eliminar el link de un repositorio local                                                             |
-
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
-
-# Proyecto Markdown + Prettier + Husky + commitlint + autochangelog
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
-
-```bash
-$ npm init
-$ npm i -D prettier
-```
-
-- Luego de sebe de instalar la extension de vsCode de [Prettier]
-- crear un archivo `.gitignore` y `.prettierignore`, suprimiento la carpete `node_modules`
-- crear un comando en la seccion de scripts de `package.json` para ejecutar el formateo del repositorio con el siguiente comando.
-```bash
-$ npm pkg set scripts.format="prettier --write ."
-> npm run format
-```
-- Habilita tu vsCode para que automaticamente cuando se guarde un archivo lo formatee antes de guardarlo
-```json
-"editor.defaultFormatter": "esbenp.prettier-vscode",
-"editor.formatOnSave": true
-```
-- Ahora se debe de agregar un disparador de formateo al momento de hacer commits por si algun cambio no se realizo por el vsCode, esto se logra por medio de la herramienta [Husky]
-```bash
-$ npm install husky -D
-$ npx husky install
-$ npm pkg set scripts.prepare="husky install"
-
-```
-- Luego de esto se debe de crear el hook que mejor nos convenga, aqui te dejo la lista de [Hooks]
-```bash
-$ npx husky add .husky/pre-commit "npm run format"
-```
+| `npm version [patch/minor/major]`    | Se usa para subir la version del paquete                                                                               |

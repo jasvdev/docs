@@ -13,13 +13,17 @@
 [img_0]: ./assets/icon-doc.svg.png
 
 # Tabla de contenido
+
 <sup>[🔙 Doc]</sup>
+
 - [Tabla de contenido](#tabla-de-contenido)
 - [VsCode](#vscode)
 - [Snippets](#snippets)
 
 # VsCode
+
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
 # Snippets
+
 Sitio oficial de documentacion [Snippets] VsCode
