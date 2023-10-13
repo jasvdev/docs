@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "proyecto de documentacion relevante acerca de tecnologias informaticas",
   "main": "index.js",
   "scripts": {
