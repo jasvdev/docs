@@ -81,7 +81,7 @@ $ echo 'foo: bar' | commitlint
 - Adicional se debe de crear un hook con husky para validar los commits
 
 ```bash
-$ npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1} -V --config commitlint.config.js"
+$ npx husky add .husky/commit-msg "npx --no -- commitlint -c -e ${1} -o -g commitlint.config.js -V"
 ```
 
 - Luego de esto procederemos a instalar nuestro gestionador de changelog
