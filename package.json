@@ -4,10 +4,11 @@
   "description": "proyecto de documentacion relevante acerca de tecnologias informaticas",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --write .",
     "prepare": "husky install",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
-    "preversion": "npm run changelog && git add CHANGELOG.md"
+    "preversion": "npm run changelog && npm run format && git add CHANGELOG.md",
+    "prettier": "prettier --check .",
+    "format": "prettier --write ."
   },
   "keywords": [
     "docs"
