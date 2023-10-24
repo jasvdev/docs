@@ -35,6 +35,7 @@
 - [Tags interactivas](#tags-interactivas)
 - [Cards Interactivas GitHub](#cards-interactivas-github)
 - [Imagenes](#imagenes)
+- [Contenido Colapsable](#contenido-colapsable)
 
 # Titulos
 
@@ -220,12 +221,18 @@ This is a regular paragraph.
         <td>Foo</td>
         <td>Foo</td>
     </tr>
+    <tr>
+        <td>Foo</td>
+        <td>Foo</td>
+        <td>Foo</td>
+    </tr>
 </table>
 
 # Tags interactivas
 
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
-https://shields.io/
+
+Sitio oficial: <https://shields.io/>
 
 [![](https://img.shields.io/badge/all-tipics-yellow.svg)](https://nodejs.org)
 
@@ -251,7 +258,7 @@ https://shields.io/
 
 <sup>[🏠 Inicio](#tabla-de-contenido)</sup>
 
-https://github-readme-stats.vercel.app/
+sitio oficial <https://github-readme-stats.vercel.app/>
 
 ![Mi stats Github](https://github-readme-stats.vercel.app/api?username=jasvdev&count_private=true&include_all_commits=true&show_icons=true&theme=react)
 
@@ -277,3 +284,16 @@ Imagen centrada, tamaño por defecto
 Imagen centrada, tamaño por defecto - Linkeada
 
 ![img_0]
+
+# Contenido Colapsable
+
+<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+
+<details>
+  <summary>
+  Click me!
+  </summary>
+
+![img_0]
+
+</details>

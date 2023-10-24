@@ -3,6 +3,7 @@ module.exports = {
   rules: {
     "header-max-length": [2, "always", 100],
     "subject-empty": [2, "never"],
+    "subject-case": [0, "always"],
     "type-empty": [2, "never"],
     "type-enum": [2, "always", ["feat", "fix"]],
     "scope-empty": [2, "never"],

@@ -67,3 +67,4 @@ $ npm -v
 | `npm link {Package}`                 | Se usa para instalar una libreria la cual tenga un link virtual activo por medio de su nombre                          |
 | `npm unlink `                        | Se usa para crear eliminar el link de un repositorio local                                                             |
 | `npm version [patch/minor/major]`    | Se usa para subir la version del paquete                                                                               |
+| `npm update -g npm`                  | Actualiza la version del NPM                                                                                           |
