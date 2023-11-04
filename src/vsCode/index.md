@@ -4,7 +4,7 @@
 <!-- Index link's -->
 <!-- Espacio para indexar los links externos usados en el archivo -->
 
-[🔙 Doc]: ../index.md
+[🔙 Doc]: ../../README.md
 [Snippets]: https://code.visualstudio.com/docs/editor/userdefinedsnippets
 
 <!-- Index Imagen -->
@@ -22,7 +22,7 @@
 
 # VsCode
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 # Snippets
 

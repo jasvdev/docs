@@ -4,7 +4,7 @@
 <!-- Index link's -->
 <!-- Espacio para indexar los links externos usados en el archivo -->
 
-[🔙 Doc]: ../index.md
+[🔙 Doc]: ../../README.md
 [NodeJs]: https://nodejs.org/es "NodeJs Org"
 [Npm]: https://docs.npmjs.com/
 
@@ -23,7 +23,7 @@
 
 # Instalacion
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 Realiza la instalacion por medio del siguiente enlace [NodeJs], segun tu SO.
 
@@ -43,7 +43,7 @@ $ npm -v
 
 # Comandos utiles
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 | Comando                              | Descripcion                                                                                                            |
 | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------- |

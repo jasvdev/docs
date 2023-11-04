@@ -4,7 +4,8 @@
 <!-- Index link's -->
 <!-- Espacio para indexar los links externos usados en el archivo -->
 
-[🔙 Doc]: ../index.md
+[🔙 Doc]: ../../README.md
+[Ejercicios]: test.md
 [NodeJs]: https://nodejs.org/es "NodeJs Org"
 
 <!-- Index Imagen -->
@@ -19,13 +20,14 @@
 - [Tabla de contenido](#tabla-de-contenido)
 - [JavaScript](#javascript)
   - [Diferencia entre definicion y exprecion](#diferencia-entre-definicion-y-exprecion)
+- [Ejercicios](#ejercicios)
 - [Variables](#variables)
   - [var](#var)
   - [let](#let)
   - [const](#const)
   - [Resumen](#resumen)
-- [funciones](#funciones)
-  - [funciona anonima autoejecutada](#funciona-anonima-autoejecutada)
+- [Funciones](#funciones)
+  - [Funciona anonima autoejecutada](#funciona-anonima-autoejecutada)
   - [Conventional function vs Arrow function](#conventional-function-vs-arrow-function)
     - [This](#this)
     - [Objeto arguments](#objeto-arguments)
@@ -58,7 +60,7 @@
 
 # JavaScript
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 es un lenguaje de programación ampliamente utilizado que se utiliza principalmente en el desarrollo web.
 
@@ -86,9 +88,13 @@ if (condicion) {
 const resultado = condicion ? valorSiCierto : valorSiFalso;
 ```
 
+# Ejercicios
+
+Aqui encontraras un listado de probleas y sus soluciones de ejercicios de programacion con javascript 👉 [Ejercicios]
+
 # Variables
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ## var
 
@@ -115,7 +121,7 @@ En general, se recomienda utilizar const siempre que sea posible, ya que fomenta
 
 # Funciones
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ## Funciona anonima autoejecutada
 
@@ -160,7 +166,7 @@ const funcionFlecha = () => {
 
 # ESC6
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ## Import/Export
 

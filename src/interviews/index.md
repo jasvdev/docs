@@ -5,20 +5,17 @@
 <!-- Espacio para indexar los links externos usados en el archivo -->
 
 [🔙 Doc]: ../../README.md
-[NodeJs]: https://nodejs.org/es "NodeJs Org"
+[Ingenieria]: ./engineering.md
+[JavaScript]: ./javascript.md
+[Plataforma Web]: ./web-platform.md
 
 <!-- Index Imagen -->
 <!-- Espacio para indexar las imagenes usadas en el archivo -->
 
 [img_0]: ./assets/icon-doc.svg.png
 
-# Tabla de contenido
+# Entrevista tecnica
 
-<sup>[🔙 Doc]</sup>
-
-- [Tabla de contenido](#tabla-de-contenido)
-- [init](#init)
-
-# init
-
-<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+- [Ingenieria]
+- [JavaScript]
+- [Plataforma Web]

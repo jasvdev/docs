@@ -4,7 +4,7 @@
 <!-- Index link's -->
 <!-- Espacio para indexar los links externos usados en el archivo -->
 
-[🔙 Doc]: ../index.md
+[🔙 Doc]: ../../README.md
 [NodeJs]: https://nodejs.org/es "NodeJs Org"
 
 <!-- Index Imagen -->
@@ -21,7 +21,7 @@
   - [¿Porque?](#porque)
   - [Instalacion](#instalacion)
   - [Configuración](#configuración)
-- [Tipado](#tipado)
+- [Types](#types)
   - [Number](#number)
   - [Boolean](#boolean)
   - [String](#string)
@@ -36,25 +36,40 @@
   - [Never](#never)
   - [Assertions or Cast](#assertions-or-cast)
   - [Inferencia de flujo](#inferencia-de-flujo)
+- [Types Alias](#types-alias)
   - [Union Types](#union-types)
-  - [Types y Literal types](#types-y-literal-types)
+  - [Interception Types](#interception-types)
+  - [Literal types](#literal-types)
   - [Template types](#template-types)
-  - [Enums](#enums)
-    - [Enums vs Const Object](#enums-vs-const-object)
+- [Enums](#enums)
+  - [Enums vs Const Object](#enums-vs-const-object)
 - [Function](#function)
   - [Type](#type)
   - [Params types](#params-types)
-  - [Return types](#return-types)
+  - [Declarative Return types](#declarative-return-types)
   - [Sobrecarga de funciones](#sobrecarga-de-funciones)
 - [Interfaces](#interfaces)
 - [Class](#class)
+  - [implements](#implements)
+  - [Extends (Herencia) / Abstract Class](#extends-herencia--abstract-class)
+  - [Private Contructor (Singlenton)](#private-contructor-singlenton)
+- [Decorator](#decorator)
 - [Genericos](#genericos)
-- [Keywords](#keywords)
+  - [Funciones](#funciones)
+  - [Clases](#clases)
+  - [Interfaces](#interfaces-1)
+- [Utily Types](#utily-types)
+  - [Key Value Type](#key-value-type)
   - [ReadOnly](#readonly)
-  - [Typeof](#typeof)
+  - [Typeof and ReturType](#typeof-and-returtype)
   - [Keyof](#keyof)
   - [Instanceof](#instanceof)
   - [Object Const Type](#object-const-type)
+  - [Access type by Id](#access-type-by-id)
+  - [Omit / Pick](#omit--pick)
+  - [Partial / Required](#partial--required)
+  - [ReadOnly Type](#readonly-type)
+  - [ReadOnly Array](#readonly-array)
 - [Libs terceros](#libs-terceros)
   - [Libs con typescript](#libs-con-typescript)
   - [Libs sin typescript](#libs-sin-typescript)
@@ -62,7 +77,7 @@
 
 # TypeScript
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 TypeScript es un lenguaje de programación que extiende JavaScript con características de tipado estático. Proporciona tipado estático opcional, lo que significa que puedes definir tipos de datos para tus variables, parámetros de función y más, lo que ayuda a detectar errores en tiempo de compilación y a mejorar la calidad y mantenibilidad del código JavaScript.
 
@@ -109,9 +124,9 @@ $ npx tsc --watch
     - `/*! No seran eliminados`
     - `//*! otro comentario`
 
-# Tipado
+# Types
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 El tipado nos ayuda a evitar sobreescribir tipos, documentar las variables o parametros recibidos y si tienes una buena integracion con tu editor de codigo, nos puede ayudar a autocompletar el codigo.
 
@@ -133,6 +148,9 @@ const product: string;
 ```typescript
 const hex = 0xfff; // const hex: number, hexadeciamales ✅
 const bin = 0b101010; // const bin: 42 , binarios ✅
+
+const extincionDinosarios = 76_000_000; // ✅
+const value = 76000000; // ✅
 
 const num = parseInt("123"); // const num: number, ✅
 const num = parseInt("a"); // const num: number, ❓
@@ -199,6 +217,14 @@ let user: tyUser;
 user = ["andres"]; // ❌
 user = ["andres", "25", false]; // ❌
 user = ["andres", 25, false]; // ✅
+
+// tener en cuenta
+user.push("pedro"); // ✅
+
+// si se quiere restringir que el tamaño se respete siempre
+type tyRGB = readonly [number, number, number];
+let color: tyRGB = [255, 255, 255];
+color.push(255); // ❌
 ```
 
 ## Any
@@ -291,27 +317,40 @@ function greeting(test: string | number) {
 }
 ```
 
+# Types Alias
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
 ## Union Types
 
 ```typescript
 //
-let userID: number | string;
+let userID: number | string; // Typado nativo
+userID = "123456"; // ✅
+userID = 123456; // ✅
+
+type tyUserID = number | string; // New type
+let newUser: tyUserID;
 userID = "123456"; // ✅
 userID = 123456; // ✅
 ```
 
-## Types y Literal types
+## Interception Types
 
 ```typescript
-type tyUserID = number | string;
-let userID: tyUserID;
 
-// literal types
-type tyAccessUser = "admin" | "user";
+```
+
+## Literal types
+
+```typescript
+type tyAccessUser = "admin" | "user" | 25;
 let userAccess: tyAcessUser;
 
 tyAcessUser = "flat"; // ❌
 tyAcessUser = "user"; // ✅
+tyAcessUser = 5; // ❌
+tyAcessUser = 25; // ✅
 ```
 
 ## Template types
@@ -326,7 +365,27 @@ type tyB = "1" | "2";
 type tyC = `${tyB}-${tyA}`;
 ```
 
-## Enums
+Tambien podemos crear estructuras fijas para templates
+
+```typescript
+type tyId = `#${"user" | "admin"}-${number}-${string}`;
+
+let idUser: tyId;
+idUser = "#user-546-adsf"; // ✅
+idUser = "#asdf-546-adsf"; // ❌
+idUser = "#user-asd-adsf"; // ❌
+idUser = "user-546-adsf"; // ❌
+idUser = "user"; // ❌
+
+type tyHexa = `#${string}`;
+let color: tyHexa;
+color = "#FFF"; // ✅
+color = "FFF"; // ❌
+```
+
+# Enums
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 Los enums en `TypeScript` permiten asignar explícitamente valores `number` o `string` a cada miembro del enum. Esto facilita la asignación de valores específicos a elementos del conjunto.
 
@@ -365,7 +424,7 @@ const key = enRol[1]; // "ADMIN"
 const valor = enRol.ADMIN; // "admin"
 ```
 
-### Enums vs Const Object
+## Enums vs Const Object
 
 - `Inversión manual:` No tienes inversión automática. Se puede implementar manualmente por medio de una funcion.
 
@@ -383,7 +442,7 @@ const ROL = {
 
 # Function
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 Las funciones dentro de typescript tienen dos formas de realizar el tipado
 
@@ -484,7 +543,7 @@ createUserObj({
 })
 ```
 
-## Return types
+## Declarative Return types
 
 Teniendo en cuenta que `typescript` hace inferencia en el retorno de funciones, nosotros tambien podemos de manera explicita indicar dicho tipo.
 
@@ -519,15 +578,311 @@ function parseStr(arg: string[]): string;
 
 # Interfaces
 
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+permite definir la estructura de objetos o clases, lo que proporciona un alto grado de tipado estático.
+
+Se diferencian con los types en dos caracteristicas
+
+- no podemos usar una interfaz para definir un conjunto de datos de tipos primitivos sino un conjuntos de propiedades de ellos
+- los types no son extensibles facilmente las interfaces si, soportar union, interseccion y herencia
+
+```typescript
+// intefaces para
+interface IAnimal {
+  // Atributo Obligatorio
+  edad: number;
+  // Atributo Opcionar
+  raza?: string; // String | undefined
+  // Cuando es de solo lectura
+  readonly viveEnLaTierra: boolean; // Solo se inicializa una vez
+  // Funciones Directas
+  (email: string, pass: string): boolean;
+  // Funciones como atributos
+  fnExplicit: (email: string, pass: string): boolean;
+  // Any a nivel de funciones
+  (): void;
+}
+
+
+// interfaz en clases
+interface IPersona {
+  nombre: string;
+  edad: number;
+  saludar: () => void;
+}
+
+// extender o heredar de otra interfaz
+interface IEmpleado extends IPersona {
+  cargo: string;
+}
+
+// implementar una interfaz
+class Estudiante implements IPersona {
+  constructor(nombre: string, edad: number) {}
+
+  saludar() {
+    console.log(`Hola, soy ${this.nombre} y tengo ${this.edad} años.`);
+  }
+}
+```
+
 # Class
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+Las clases de por si son soportadas por javascript, por tanto la mayoria de funcionalidades son nativas de javascript, solo algunas mejoras nos da typescript.
+
+```typescript
+const date = new Date();
+
+// Clase
+class DtoEmpresa {
+   // atributo estatico
+  static name = 'NOMBRE_EMPRESA';
+  private static pi = 3.1416;
+
+  nombre: string; // publico sin inicializar
+  apellido = ''; // publico por defecto inicializado
+  public email = ''; // publico explicito inicializado
+
+  readonly genero: = ''; // publico de solo lectura
+  private _id= 0; // privado solo en typescipt inicializado
+  #id= 0; // privado nativo de javascript inicializado
+  protected edad = ''; // privado pero de lectura en clases hijas
+
+  constructor(pData: any = {}) {
+    {nombre, apelldio, email} = ...pData;
+  }
+
+  get nombreCompleto(): string {
+    return this.nombre + ' ' + this.apellido;
+  }
+
+  set id(pId: number): void {
+    this._id = pId;
+    this.#id = pId;
+  }
+  // metodo estatico
+  static pi_por(pNumber: number): number {
+    return this.pi * 3.1416;
+  }
+}
+```
+
+## implements
+
+```ts
+interface IAnimal {
+  name: string;
+  move: () => void;
+}
+
+class Mamifero implements IAnimal {
+  name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  move() {
+    console.log("caminar");
+  }
+}
+```
+
+## Extends (Herencia) / Abstract Class
+
+```ts
+abstract class Animal {
+  protected name: string;
+  constructor(name: string) {
+    this.name = name ?? "";
+  }
+  move() {
+    console.log("moving...");
+  }
+}
+
+class Dog extends Animal {
+  talk() {
+    console.log("wuaw..." + this.name);
+  }
+}
+
+const perro = new Animal("firulais"); // ❌ by abstract class
+
+const firulais = new Dog("firulais"); // ✅
+
+console.log(firulais.name); // firulais ❌
+firulais.move(); // moving... ✅
+firulais.talk(); // wuaw...firulais ✅
+```
+
+## Private Contructor (Singlenton)
+
+```ts
+class Service {
+  #name: string;
+  static instance: Service | null = null;
+
+  private constructor(name: string) {
+    this.#name = name;
+  }
+
+  getName() {
+    return this.#name;
+  }
+
+  static create(name: string): Service {
+    if (Service.instance === null) {
+      Service.instance = new Service(name);
+    }
+    return Service.instance;
+  }
+}
+
+const service1 = Service.create("serviceA");
+const service2 = Service.create("serviceB");
+const service3 = Service.create("serviceC");
+console.log(service1.getName()); // serviceA ✅
+console.log(service2.getName()); // serviceA ✅
+console.log(service3.getName()); // serviceA ✅
+console.log(service1 === service3); // true ✅
+```
+
+# Decorator
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+Los decoradores en TypeScript son una característica que permite modificar o agregar metadatos a clases, métodos, propiedades o parámetros de funciones.
+
+```typescript
+function miDecorador(target: any) {
+  // Código que modifica o agrega metadatos al 'target'
+}
+
+@miDecorador
+class MiClase {
+  // Contenido de la clase
+}
+```
+
+```typescript
+function propiedadDecorador(target: any, propertyKey: string) {
+  // Código para modificar la propiedad
+}
+
+class MiClase {
+  @propiedadDecorador
+  miPropiedad: string;
+}
+
+function metodoDecorador(target: any, propertyKey: string, descriptor: PropertyDescriptor) {
+  // Código para modificar el método
+}
+
+class OtraClase {
+  @metodoDecorador
+  miMetodo() {
+    // Contenido del método
+  }
+}
+
+function parametroDecorador(target: any, propertyKey: string, parameterIndex: number) {
+  // Código para modificar un parámetro de función
+}
+
+class AlgunaClase {
+  miMetodo(@parametroDecorador parametro: string) {
+    // Contenido del método
+  }
+}
+```
 
 # Genericos
 
-# Keywords
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+## Funciones
+
+```typescript
+let lMaterias = ["español", "ingles", "sociales"];
+let lDinero = [1000, 2000, 3000];
+let lVotos = [true, false, false];
+
+// Primera T = funcion Generica
+// Segunda T = Tipo que se espera
+// Tercera T = Tipo que se retorna
+function random<T>(pLista: T[]): T {
+  const lRandom: number = Math.floor(Math.random() * pLista.length);
+  return pLista[lRandom];
+}
+
+// Esta funciona aplica a cualquier lista, segun su tipo valida el retorno
+console.log(random(lMaterias));
+console.log(random(lDinero));
+console.log(random(lVotos));
+```
+
+---
+
+## Clases
+
+```typescript
+class Unificador<T, P extends number | string> {
+  valor: T;
+  tipo: P;
+  constructor(valor: T, tipo: P) {
+    this.valor = valor;
+    this.tipo = tipo;
+  }
+}
+
+const lUniA = new Unificador<number, number>(5, 2);
+const lUniB = new Unificador<string, number>("**", 3);
+```
+
+---
+
+## Interfaces
+
+```typescript
+interface IDatos<T, P = string> {
+  nombre: T;
+  tipo?: P;
+}
+
+const lDatoA: IDatos<number> = { nombre: 1, tipo: "algo" };
+const lDatoB: IDatos<number, number> = { nombre: 1, tipo: 0 };
+```
+
+# Utily Types
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+## Key Value Type
+
+Esta tecnica es muy usada cuando no conoces la interaz estricta de un objeto, pero si quiers validar de algun modo el contenido o las posibles llaves que maneja
+
+```ts
+// De esta forma se pueden usar key: string | number | template type
+
+type IIndezable = {
+  [key: string]: string | number;
+};
+
+let obj: IIndezable;
+obj = {
+  id: "123asdf", // ✅
+  edad: 32, // ✅
+  isActive: true, // ❌
+};
+```
 
 ## ReadOnly
 
-se utiliza para marcar propiedades de un `clase` o de una `interfaz` como de solo lectura, lo que significa que una vez que se asigna un valor a estas propiedades, no se pueden modificar o reasignar. Esto proporciona una capa adicional de inmutabilidad y seguridad en tus objetos, lo que puede ser útil para prevenir modificaciones accidentales en el código.
+se utiliza para marcar propiedades de lectura en un `type` una `clase` o de una `interfaz` como de solo lectura, lo que significa que una vez que se asigna un valor a estas propiedades, no se pueden modificar o reasignar. Esto proporciona una capa adicional de inmutabilidad y seguridad en tus objetos, lo que puede ser útil para prevenir modificaciones accidentales en el código.
 
 ```typescript
 class Persona {
@@ -567,19 +922,52 @@ lObj.coor.x = 10; // ❌
 lObj.coor.y = 10; // ✅
 ```
 
-## Typeof
+## Typeof and ReturType
 
-Es un operador en javascript que se utiliza para obtener el tipo de un valor o una expresión en tiempo de compilación. Se puede usar con objetos, funciones o valores para obtener su tipo estático en lugar de su valor real en tiempo de ejecución. Esto es útil para realizar análisis estáticos de tipos y para trabajar con tipos genéricos.
+En javascript se utiliza para obtener el tipo de un valor o una expresión en tiempo de compilación. En typescript sirve para obtener el tipo de estructura de un elemento y volverlo una interfaz, Se puede usar con objetos, funciones o valores para obtener su tipo estático.
 
 ```typescript
 console.log(typeof numero); // number
+
+// from object
+const address = {
+  country: "colombia",
+  city: "pereira",
+};
+
+type tyAddress = typeof address;
+
+// from function
+function createAddress() {
+  return {
+    country: "colombia",
+    city: "pereira",
+  };
+}
+
+type tyAddress = ReturnType<typeof createAddress>;
 ```
 
 ## Keyof
 
-Es un operador en `TypeScript` que se utiliza para obtener un tipo que representa todas las claves (nombres de propiedades) de un tipo de objeto. Se usa con la palabra clave typeof para obtener las claves de un objeto o tipo de objeto en tiempo de compilación. Esto es útil para realizar operaciones basadas en propiedades en objetos y para garantizar que las propiedades utilizadas sean válidas en tiempo de desarrollo.
+Es un operador en `TypeScript` que se utiliza para obtener las keys de un tipo y volverlo un nuevo tipado es decir que representa todas las claves (nombres de propiedades) de otro tipo. Esto es útil para realizar operaciones basadas en propiedades en objetos y para garantizar que las propiedades utilizadas sean válidas en tiempo de desarrollo.
 
 ```typescript
+// build type from other type
+// some article type
+type Article = {
+  title: string;
+  id: number;
+};
+
+// type Key = "title" | "id"
+type Key = keyof Article;
+let press: Key;
+press = "title"; // ✅
+press = "pa"; // ❌
+press = "id"; // ✅
+
+// build type from object
 const ROL = {
   ADMIN: "admin",
   SELLER: false,
@@ -602,6 +990,13 @@ if (miCoche instanceof Coche) {
   console.log("Es un coche.");
 } else {
   console.log("No es un coche.");
+}
+
+// Validanto componentes del DOM
+const canvas = document.getElementById("id_obj");
+
+if (canvas instanceof HTMLCanvasElement) {
+  const ctx = canvas.getContext("2d");
 }
 ```
 
@@ -637,9 +1032,108 @@ const ROL = {
 type tyROLval = typeof ROL[keyof typeof ROL];
 ```
 
+## Access type by Id
+
+En typescript podemos acceder a tipados internos, sean types o interfaces, por medio del index del tipado
+
+```typescript
+type tyHexa = `#${string}`;
+
+type tyPersona = {
+  name: string;
+  color: tyHexa;
+};
+
+let color: tyPersona["color"];
+color = "#FFF"; // ✅
+color = "FFF"; // ❌
+```
+
+## Omit / Pick
+
+Esta utilidad nos permite omitir atributos de un tipo o interfaz o en su caso contrario seleccionar uno u otro
+
+```typescript
+interface IProduct {
+  id: string;
+  name: string;
+  category: {
+    id: string;
+    name: string;
+  };
+}
+
+// Omit
+type ICreateProductDto = Omit<IProduct, "id" | "category">; // ✅
+
+interface ICreateProductDto extends Omit<IProduct, "id" | "category"> {
+  // ✅
+  categoryId: string;
+}
+
+// Pick
+type ICreateProductDto = Pick<IProduct, "name">; // ✅
+
+interface ICreateProductDto extends Pick<IProduct, "name"> {
+  // ✅
+  categoryId: string;
+}
+```
+
+## Partial / Required
+
+Para transformar una interfaz o tipo a una forma completamente opcional o requerido, usados estos utilitys
+
+```typescript
+interface IProduct {
+  id: string;
+  name: string;
+  category?: {
+    id: string;
+    name: string;
+  };
+}
+
+// all optional props
+type IUpdateProductDto = Partial<IProduct>; // ✅
+
+// all required props
+type ICreateCompletProductDto = Required<IProduct>; // ✅
+```
+
+## ReadOnly Type
+
+Para convertir una interfaz completamente de lectura, lo podemos realizar por este medio
+
+```typescript
+interface IProduct {
+  id: string;
+  name: string;
+}
+
+// all props readonly
+type IGetProductDto = Readonly<IProduct>; // ✅
+interface IGetProductDto extends Readonly<IProduct> {} // ✅
+```
+
+## ReadOnly Array
+
+Evita mutaciones en un array. lo cual con el readonly normal solo evita la asignacion de un nuevo array mas no la mutacion del mismo.
+
+```typescript
+const alphabet: ReadonlyArray<string> = ["a", "b", "c"];
+
+alphabet.push("d"); // ❌
+alphabet.pop(); // ❌
+alphabet.unshif(1); // ❌
+alphabet.map(() => {}); // ✅
+alphabet.filter(() => {}); // ✅
+alphabet.reduce(); // ✅
+```
+
 # Libs terceros
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ## Libs con typescript
 
@@ -661,7 +1155,7 @@ $ npm i -D @types/lodash
 
 # Docs
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 - [HandBook](https://www.typescriptlang.org/)
 - [Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)

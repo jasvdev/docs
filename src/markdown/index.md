@@ -4,7 +4,7 @@
 <!-- Index link's -->
 <!-- Espacio para indexar los links externos usados en el archivo -->
 
-[🔙 Doc]: ../index.md
+[🔙 Doc]: ../../README.md
 [gitlab_doc]: https://docs.gitlab.com/ee/ "GitLab Documentation"
 
 <!-- Index Imagen -->
@@ -39,7 +39,7 @@
 
 # Titulos
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 `# ♻️ h1`
 
@@ -61,7 +61,7 @@ esto es un texto normal
 
 # Citas
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 > La vida es muy corta para aprender alemán. -Tad Marburg
 
@@ -85,7 +85,7 @@ esto es un texto normal
 
 # Texto
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 _énfasis_ (cursiva)
 
@@ -103,7 +103,7 @@ Saltos de linea
 
 # Codigo
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 > `console.log(lAlgo);`
 
@@ -125,7 +125,7 @@ asp, c, C++, cs, csharp, cmd, css, csv, bash, diff, elixir, erb, go, haml, http,
 
 # Listas
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 - Un elemento en una lista no ordenada
   - Otro elemento en una lista
@@ -142,7 +142,7 @@ asp, c, C++, cs, csharp, cmd, css, csv, bash, diff, elixir, erb, go, haml, http,
 
 # Html
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 <p align="center" width="300">
    <img align="center" width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/539px-React-icon.svg.png" />
@@ -173,7 +173,7 @@ asp, c, C++, cs, csharp, cmd, css, csv, bash, diff, elixir, erb, go, haml, http,
 
 <sup>Deja tu ⭐ si te gusta el proyecto.</sup>
 
-<strong>[🏠 Inicio](#tabla-de-contenido)</strong>
+<strong>[⬆️ Inicio](#tabla-de-contenido)</strong>
 
 **[⬆️ Volver a índice](#tabla-de-contenido)**
 
@@ -183,7 +183,7 @@ asp, c, C++, cs, csharp, cmd, css, csv, bash, diff, elixir, erb, go, haml, http,
 
 Enlace menor
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ## Url con nombre
 
@@ -203,7 +203,7 @@ Enlace menor
 
 # Tablas
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 | Comando                              | Descripcion |
 | ------------------------------------ | ----------- |
@@ -230,7 +230,7 @@ This is a regular paragraph.
 
 # Tags interactivas
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 Sitio oficial: <https://shields.io/>
 
@@ -256,7 +256,7 @@ Sitio oficial: <https://shields.io/>
 
 # Cards Interactivas GitHub
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 sitio oficial <https://github-readme-stats.vercel.app/>
 
@@ -270,7 +270,7 @@ sitio oficial <https://github-readme-stats.vercel.app/>
 
 # Imagenes
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 Imagen centrada, por tamaño controlado
 
@@ -287,7 +287,7 @@ Imagen centrada, tamaño por defecto - Linkeada
 
 # Contenido Colapsable
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 <details>
   <summary>

@@ -4,7 +4,7 @@
 <!-- Index link's -->
 <!-- Espacio para indexar los links externos usados en el archivo -->
 
-[🔙 Doc]: ../index.md
+[🔙 Doc]: ../../README.md
 [Hooks]: https://git-scm.com/docs/githooks
 [Prettier]: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
 [Stylelint]: https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
@@ -37,11 +37,12 @@
   - [CommitLint + Standart Commmit](#commitlint--standart-commmit-1)
   - [Converional ChangeLog](#converional-changelog-1)
   - [Absolute Import](#absolute-import)
+  - [Generado de versiones](#generado-de-versiones)
   - [Tailwind](#tailwind)
 
 # Proyecto Markdown + Prettier + Husky + Commitlint + Convetional ChangeLog
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ## Markdown + NodeJs
 
@@ -60,7 +61,7 @@ $ npm init
 <!-- Index link's -->
 <!-- Espacio para indexar los links externos usados en el archivo -->
 
-[🔙 Doc]: ../index.md
+[🔙 Doc]: ../../README.md
 [NodeJs]: https://nodejs.org/es "NodeJs Org"
 
 <!-- Index Imagen -->
@@ -77,7 +78,7 @@ $ npm init
 
 # init
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 ```
 
 ### Prettier
@@ -212,7 +213,7 @@ $ npm pkg set scripts.version="npm run changelog && npx prettier --write CHANGEL
 
 # Proyecto ReactJS + Vite + Prettier + Husky + Commitlint + Convetional ChangeLog
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ### Vite + ReactJs + Eslint
 
@@ -437,6 +438,21 @@ export default defineConfig({
   }
 });
 
+```
+
+### Generado de versiones
+
+Para poder gestionar las versiones de nuestro projecto usando `npm`, podemos usar el siguiente comando
+
+```bash
+$ npm version [patch|minor|major]
+```
+
+Para poder cambiar la plantilla con el que se suben la version de release, debemos de crear un archivo `.npmrc` y agregar la plantilla que se adapte mejor a nuestra descripcion
+
+```bash
+tag-version-prefix=""
+message="chore(:rocket:): %s release"
 ```
 
 ### Tailwind

@@ -4,7 +4,7 @@
 <!-- Index link's -->
 <!-- Espacio para indexar los links externos usados en el archivo -->
 
-[🔙 Doc]: ../index.md
+[🔙 Doc]: ../../README.md
 [sitio oficial]: https://git-scm.com/
 
 <!-- Index Imagen -->
@@ -39,13 +39,13 @@
 
 # Git
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 Git ([sitio oficial]) es un sistema de control de versiones distribuido gratuito y de código abierto diseñado para manejar todo, desde proyectos pequeños hasta proyectos muy grandes, incluso documentación personal.
 
 ## Glosario
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 - `Working Directory` : "Directorio de trabajo" en la copia local del repositorio
 - `Staging Area` : "Espacio de preparacion" para lanzar una nueva confirmacion (Commit) al repositorio GIT
@@ -60,7 +60,7 @@ Git ([sitio oficial]) es un sistema de control de versiones distribuido gratuito
 
 ## Ciclo de vida del fichero (states)
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 - `Untracked` : Archivo nuevo
 - `Modified` : Archivo ya en repositorio, que fue modificado
@@ -69,7 +69,7 @@ Git ([sitio oficial]) es un sistema de control de versiones distribuido gratuito
 
 ## Comands
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 | Command Bash Console | Description                             |
 | -------------------- | --------------------------------------- |
@@ -165,7 +165,7 @@ Git ([sitio oficial]) es un sistema de control de versiones distribuido gratuito
 
 # Git Flow
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ![img_0]
 
@@ -196,7 +196,7 @@ Git ([sitio oficial]) es un sistema de control de versiones distribuido gratuito
 
 ## Ambientes
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 - Ideal
   - develop (test developers)
@@ -213,7 +213,7 @@ Git ([sitio oficial]) es un sistema de control de versiones distribuido gratuito
 
 ## Conventional Commits
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 Especificación para dar significado a los mensajes de los commits haciéndolos legibles para máquinas y humanos [oficial site](https://www.conventionalcommits.org/es/v1.0.0/)
 
@@ -236,7 +236,7 @@ Especificación para dar significado a los mensajes de los commits haciéndolos 
 
 ## Tipos de commits segun su contenido con emoji
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 | CATEGORIA | EMOJI             | USO                                                 |
 | --------- | ----------------- | --------------------------------------------------- |
@@ -253,7 +253,7 @@ Especificación para dar significado a los mensajes de los commits haciéndolos 
 
 ## Tipos de commits github Admin
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 | CATEGORIA | EMOJI           | USO                                            |
 | --------- | --------------- | ---------------------------------------------- |
@@ -265,7 +265,7 @@ Especificación para dar significado a los mensajes de los commits haciéndolos 
 
 ## VsCode Sniped
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ```json
   // Message Git
@@ -320,7 +320,7 @@ Especificación para dar significado a los mensajes de los commits haciéndolos 
 
 ## Tool for Git client
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 > [SourceTree](https://www.sourcetreeapp.com/)
 >
@@ -336,7 +336,7 @@ Especificación para dar significado a los mensajes de los commits haciéndolos 
 
 ## Doc's
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 - [Gitflow](https://www.atlassian.com/es/git/tutorials/comparing-workflows/gitflow-workflow)
 - [Git-emoji](https://gitmoji.dev/)
@@ -349,7 +349,7 @@ Especificación para dar significado a los mensajes de los commits haciéndolos 
 
 ## Tabla de alias
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 | | Comando | Descripcion |
 | --- | --------------- | ----------------------------------------------------------------------------------------------------------------------------- |
 | ⭐ | `git ga` | git add |
@@ -539,7 +539,7 @@ Especificación para dar significado a los mensajes de los commits haciéndolos 
 
 ## Alias for .gitconfig
 
-<sup>[🏠 Inicio](#tabla-de-contenido)</sup>
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ```
   ga = add
