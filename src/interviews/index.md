@@ -7,7 +7,7 @@
 [🔙 Doc]: ../../README.md
 [Ingenieria]: ./engineering.md
 [JavaScript]: ./javascript.md
-[Plataforma Web]: ./web-platform.md
+[React]: ./react.md
 
 <!-- Index Imagen -->
 <!-- Espacio para indexar las imagenes usadas en el archivo -->
@@ -18,4 +18,4 @@
 
 - [Ingenieria]
 - [JavaScript]
-- [Plataforma Web]
+- [React]
