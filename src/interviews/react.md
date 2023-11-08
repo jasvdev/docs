@@ -141,6 +141,18 @@
   - [Too many re-renders. React limits the number of renders to prevent an infinite loop](#too-many-re-renders-react-limits-the-number-of-renders-to-prevent-an-infinite-loop)
   - [¿Qué diferencia existe entre Shadow DOM y Virtual DOM?](#qué-diferencia-existe-entre-shadow-dom-y-virtual-dom)
   - [¿Qué es el Binding?](#qué-es-el-binding)
+- [¿Qué es Redux y cuál es su propósito en una aplicación web?](#qué-es-redux-y-cuál-es-su-propósito-en-una-aplicación-web)
+  - [Explique los conceptos clave de Redux, como el Store, Actions y Reducers.](#explique-los-conceptos-clave-de-redux-como-el-store-actions-y-reducers)
+  - [¿Cuándo consideraría usar Redux en una aplicación? ¿Cuándo podría ser excesivo?](#cuándo-consideraría-usar-redux-en-una-aplicación-cuándo-podría-ser-excesivo)
+  - [Hable sobre la inmutabilidad en Redux. ¿Por qué es importante?](#hable-sobre-la-inmutabilidad-en-redux-por-qué-es-importante)
+  - [Explique el ciclo de vida de una acción en Redux, desde la creación hasta la manipulación en un Reducer.](#explique-el-ciclo-de-vida-de-una-acción-en-redux-desde-la-creación-hasta-la-manipulación-en-un-reducer)
+  - [¿Cuál es la diferencia entre connect y useSelector en React-Redux para conectar componentes a la tienda de Redux?](#cuál-es-la-diferencia-entre-connect-y-useselector-en-react-redux-para-conectar-componentes-a-la-tienda-de-redux)
+  - [¿Qué es un middleware en Redux y cuál es su uso común?](#qué-es-un-middleware-en-redux-y-cuál-es-su-uso-común)
+  - [Hable sobre las ventajas y desventajas de Redux en comparación con otras soluciones de gestión de estado, como el estado local de React o Mobx.](#hable-sobre-las-ventajas-y-desventajas-de-redux-en-comparación-con-otras-soluciones-de-gestión-de-estado-como-el-estado-local-de-react-o-mobx)
+  - [¿Cómo manejaría la optimización de rendimiento en una aplicación grande con Redux?](#cómo-manejaría-la-optimización-de-rendimiento-en-una-aplicación-grande-con-redux)
+  - [Hable sobre la depuración de aplicaciones Redux. ¿Qué herramientas y técnicas utiliza?](#hable-sobre-la-depuración-de-aplicaciones-redux-qué-herramientas-y-técnicas-utiliza)
+  - [Cuéntame sobre un proyecto en el que hayas trabajado con Redux. ¿Cuáles fueron los desafíos y cómo los superaste?](#cuéntame-sobre-un-proyecto-en-el-que-hayas-trabajado-con-redux-cuáles-fueron-los-desafíos-y-cómo-los-superaste)
+  - [¿Cómo abordaría el manejo de errores en una aplicación Redux?](#cómo-abordaría-el-manejo-de-errores-en-una-aplicación-redux)
 
 # Principiante
 
@@ -3301,11 +3313,9 @@ Recomendamos revisar las siguientes secciones:
 
 - [¿Cuáles son las reglas de los hooks en React?](#cuáles-son-las-reglas-de-los-hooks-en-react)
 
-<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
-
----
-
 #### Can’t perform a React state update on an unmounted component
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 Este error se produce cuando intentamos actualizar el estado de un componente que ya no está montado. Esto puede ocurrir cuando el componente se desmonta antes de que se complete una petición asíncrona, por ejemplo:
 
@@ -3589,3 +3599,83 @@ En el caso del **Two-Way Binding**, la cafetera puede verter y recibir café en 
 
 Sí quieres saber más comparto el siguiente enlace:  
 [How To Bind Any Component to Data in React: One-Way Binding](https://www.telerik.com/blogs/how-to-bind-any-component-data-react-one-way-binding)
+
+# ¿Qué es Redux y cuál es su propósito en una aplicación web?
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+Redux es una biblioteca de gestión de estado para aplicaciones JavaScript, especialmente aplicaciones web. Su propósito es mantener un estado predecible y centralizado, lo que facilita la administración y actualización de la información compartida en la aplicación.
+
+## Explique los conceptos clave de Redux, como el Store, Actions y Reducers.
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+El Store es un objeto que almacena el estado de la aplicación.
+
+Actions son objetos que describen cambios en el estado.
+Reducers son funciones que especifican cómo se aplican las acciones al estado actual para obtener un nuevo estado.
+
+## ¿Cuándo consideraría usar Redux en una aplicación? ¿Cuándo podría ser excesivo?
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+Se usaría Redux en aplicaciones con un estado complejo y compartido entre múltiples componentes. Podría ser excesivo en aplicaciones más simples, donde el estado local de React podría ser suficiente.
+
+## Hable sobre la inmutabilidad en Redux. ¿Por qué es importante?
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+La inmutabilidad implica que los datos no se pueden modificar directamente. Es importante en Redux para garantizar que los cambios de estado se realicen de manera predecible y que el historial de cambios sea más fácil de rastrear.
+
+## Explique el ciclo de vida de una acción en Redux, desde la creación hasta la manipulación en un Reducer.
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+Una acción se crea y se despacha en un componente.
+Luego, la acción viaja a través de los Reducers, que deciden cómo actualizar el estado.
+Los Reducers devuelven un nuevo estado inmutable.
+
+## ¿Cuál es la diferencia entre connect y useSelector en React-Redux para conectar componentes a la tienda de Redux?
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+connect es una función de alto orden (HOC) que se utiliza en clases de componentes.
+useSelector es un gancho que se utiliza en componentes funcionales. Ambos se utilizan para acceder al estado de Redux.
+
+## ¿Qué es un middleware en Redux y cuál es su uso común?
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+Un middleware es una función que se ejecuta antes de que una acción llegue a los Reducers. Se usa comúnmente para manejar efectos secundarios, como llamadas a API asincrónicas. Ejemplos de middleware son Redux Thunk y Redux Saga.
+
+## Hable sobre las ventajas y desventajas de Redux en comparación con otras soluciones de gestión de estado, como el estado local de React o Mobx.
+
+- `Ventajas`: Centralización del estado, herramientas de desarrollo sólidas, previsibilidad en la gestión del estado.
+- `Desventajas`: Puede resultar en un código más verboso en comparación con el estado local de React en aplicaciones pequeñas y simples.
+
+## ¿Cómo manejaría la optimización de rendimiento en una aplicación grande con Redux?
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+Utilizaría la memoización de selectores para evitar cálculos innecesarios.
+Normalizaría datos para reducir la redundancia.
+Implementaría la carga diferida de datos según sea necesario.
+
+## Hable sobre la depuración de aplicaciones Redux. ¿Qué herramientas y técnicas utiliza?
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+Utilizaría herramientas como Redux DevTools para rastrear las acciones y el estado en la aplicación.
+Agregaría registros y puntos de interrupción en los Reducers y middleware para depurar problemas específicos.
+
+## Cuéntame sobre un proyecto en el que hayas trabajado con Redux. ¿Cuáles fueron los desafíos y cómo los superaste?
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+[El candidato proporciona detalles de un proyecto anterior y cómo abordó los desafíos específicos en la implementación de Redux].
+
+## ¿Cómo abordaría el manejo de errores en una aplicación Redux?
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+Implementaría una acción de error y Reducers para manejar errores de manera centralizada.
+Utilizaría middleware para gestionar llamadas asincrónicas y manejar errores.
