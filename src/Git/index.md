@@ -93,21 +93,22 @@ Git ([sitio oficial]) es un sistema de control de versiones distribuido gratuito
 | `git config --global alias.nameCommand 'log --oneline decorate --all --graph'` | Creando un **COMANDO PERSONALIZADO** un alias con el nombre "nameCommand" con las instrucciones de log, importante no se usa la palabra git dentro de los alias. Tambien se aclara que de un alias, se puede seguir enviando flags naturales del comando que empaqueta el alias y se ejecuta de forma natural |
 | `git config --global --unset alias.nameCommand`                                | Elimina el **COMANDO PERSONALIZADO** alias o la configuracion que se indique                                                                                                                                                                                                                                  |
 
-| Command Git Basic             | Description                                                                                                                                                        |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `git status`                  | Lo usas para que muestre la lista de archivos que has cambiado, junto con archivos que serán preparados y confirmados.                                             |
-| `git add`                     | Lo usas para agregar archivos al área de de preparación (stage).                                                                                                   |
-| `git diff`                    | Muestra el listado total de cambios realizados sobre el working directoryarea.                                                                                     |
-| `git diff --staged`           | Muestra el listado total de cambios realizados sobre el stage area.                                                                                                |
-| `git diff commitA...commitB`  | Muestra el listado total de cambios entre dos commits o tags o branch.                                                                                             |
-| `git commit`                  | Lo usas para crear un cambio que se guardará en el directorio git.                                                                                                 |
-| `git commit --ament`          | Lo usas para enmendar el ultimo commit, bien sea para cambiar el mensaje o el contenido de los cambio, lo que se hace es fusionar los cambios de ambos de commits. |
-| `git restore file`            | Nos permite restaurar un archivo del working area a su estado original en HEAD.                                                                                    |
-| `git restore file`            | Nos permite restaurar un archivo del working area a su estado original en HEAD.                                                                                    |
-| `git reset --hard`            | Nos permite resetear estado original en HEAD.                                                                                                                      |
-| `git reset HEAD file.txt`     | Nos permite restablecer un archivo el cual ya tiene cambios guardados, en el stage area.                                                                           |
-| `git rm Documentation/\*.txt` | Elimina archivos del árbol de trabajo y del índice, recibe expresiones como patrón.                                                                                |
-| `git mv <origen> <destino>`   | mueve o cambia el nombre de un archivo o un directorio.                                                                                                            |
+| Command Git Basic              | Description                                                                                                                                                        |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `git status`                   | Lo usas para que muestre la lista de archivos que has cambiado, junto con archivos que serán preparados y confirmados.                                             |
+| `git add`                      | Lo usas para agregar archivos al área de de preparación (stage).                                                                                                   |
+| `git diff`                     | Muestra el listado total de cambios realizados sobre el working directoryarea.                                                                                     |
+| `git diff --staged`            | Muestra el listado total de cambios realizados sobre el stage area.                                                                                                |
+| `git diff commitA...commitB`   | Muestra el listado total de cambios entre dos commits o tags o branch.                                                                                             |
+| `git commit`                   | Lo usas para crear un cambio que se guardará en el directorio git.                                                                                                 |
+| `git commit --ament`           | Lo usas para enmendar el ultimo commit, bien sea para cambiar el mensaje o el contenido de los cambio, lo que se hace es fusionar los cambios de ambos de commits. |
+| `git commit --ament --no-edit` | Lo usas para enmendar el ultimo commit, sin cambiar el mensaje del ultimo commit solo el contenido.                                                                |
+| `git restore file`             | Nos permite restaurar un archivo del working area a su estado original en HEAD.                                                                                    |
+| `git restore file`             | Nos permite restaurar un archivo del working area a su estado original en HEAD.                                                                                    |
+| `git reset --hard`             | Nos permite resetear estado original en HEAD.                                                                                                                      |
+| `git reset HEAD file.txt`      | Nos permite restablecer un archivo el cual ya tiene cambios guardados, en el stage area.                                                                           |
+| `git rm Documentation/\*.txt`  | Elimina archivos del árbol de trabajo y del índice, recibe expresiones como patrón.                                                                                |
+| `git mv <origen> <destino>`    | mueve o cambia el nombre de un archivo o un directorio.                                                                                                            |
 
 | Command Branching and Merging        | Description                                                                                                                        |
 | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |

@@ -12,8 +12,6 @@
 
 [img_0]: ./assets/http.png
 [img_1]: ./assets/websocket.png
-[img_2]: ./assets/hexagonal_arquitecture.png
-[img_3]: ./assets/clean_arquitecture.jpg
 
 # Tabla de contenido
 
@@ -29,6 +27,8 @@
 - [Que es CleanCode?](#que-es-cleancode)
   - [Opinion personal](#opinion-personal)
   - [4 Reglas de diseño simple](#4-reglas-de-diseño-simple)
+  - [Deuda tecnica](#deuda-tecnica)
+  - [Refactorizacion](#refactorizacion)
 - [Que es la programacion orientada a objetos?](#que-es-la-programacion-orientada-a-objetos)
 - [Que es la programacion funcional?](#que-es-la-programacion-funcional)
 - [Principios S.O.L.I.D](#principios-solid)
@@ -113,7 +113,21 @@ Es un termino en general, que se volvio popular cuando el ingeniero Robert.C Mar
 ## Opinion personal
 
 - Debe de ser entendido facilmente por otro programador (legibilidad)
-- Nombre con sentidos y semanticos, que sean mas imperativo que descriptivo
+- Nombre con sentidos y semanticos, que sean mas declarativo que imperativo
+- Nombres en ingles pronunciables y expresivos, lo mas corto posibles que transmitan contexto
+- Evaluar si un comentario si es necesario o la funcionalidad no esta lo suficientemente clara
+- Los comentarios deben ser la excepcion, no la regla, no comentes un codigo mal escrito para explicarlo, es mejor rehacerlo de nuevo.
+- Los elementos que representen un conjuntos de items, siempre deberian estan en plural, llamese, array, enumeracion etc...
+- Los elementos booleanos deberian de tener prefijo, para indicar semanticamente mejor una afirmacion, `is`, `has`, `can` => `isOpen, canActive, hasValues.`
+- Para las variables numericas, podemos tener otros prefijos que hacen alucion a numerots. `total`, `count`, `min`, `max`
+- Para las funciones deberiamos de intentar expresar `acciones` + `sustantivo`, descriptivos y concisos, si escribir toda la implementacion. `sendEmail`, `createUser`, `deleteUser`
+- En las clases debemos de usar un `sustantivo` o `frases de sustantivo`, evita tener nombres genericos.
+- Limitar a 3 parametros maximos en funcion, intentar siempre usar object params como estrategia, para mejorar la retrocompatibilidad.
+- Las funciones deben ser simples, de tamaño reducido y prioriza el uso de la condicional ternaria.
+- Si la funcion retornar un valor, priorizar los early return.
+- Al momento de estructurar una clase
+  - Propiedades estaticas primero, luego privadas y de ultimo publicas
+  - Metodos, primero contructores staticos y luego el normal, seguidamente metodos estaticos, luego privados, seguidos de publicos de mayor a menor importancia y al final los getter and setters.
 
 ## 4 Reglas de diseño simple
 
@@ -123,6 +137,18 @@ Es un termino en general, que se volvio popular cuando el ingeniero Robert.C Mar
   - El codigo deberia ser autoexplicativo
 - Evitar duplicidad
 - Tener los menor componentes posibles, evitando complejidades innecesarias
+
+## Deuda tecnica
+
+la deuda técnica es el resultado de compromisos a corto plazo que pueden generar costos a largo plazo.
+
+- `Imprudente`: Es cuando se toma solucion de forma deliverada, la cual cumple con el objetivo pero no se tiene el tiempo para analizar si es la mejor solucion, o si existen una forma mejor de implementarla, solo se copia y se pega el codigo.
+- `Inadvertida`: Deuda de falsos perfiles altos, la cual se genera por dar mucha confianza a desarrolladores que no tienen tanto señoriti y a los cuales no se realizan revisiones de pares, por lo cual entragan codigo que funciona pero tal vez sea costoso darle soporte en el tiempo.
+- `Prudente`: Se implementa una solucion despues de ver varias soluciones, se es claro que tal vez no sea la mejor o se implemento de una manera provisional, pero la cual el equipo es conciente y se planea hacer refactorizacion a futuro por temas de tiempos.
+
+## Refactorizacion
+
+Este es el precio de la deuda tecnica, es indispensable que cuando se va a enfrentarse a este tipo de actividad el codigo cuente con pruebas automaticas, para validar el funcionamiento pero con el nuevo codigo.
 
 # Que es la programacion orientada a objetos?
 
@@ -211,6 +237,9 @@ Garantizan la calidad y el funcionamiento adecuado de las aplicaciones. Es impor
 
 - `Arquitectura Orientada a Servicios (SOA)`: SOA es una arquitectura que se basa en la idea de servicios independientes que se comunican a través de interfaces. Es útil para la integración de sistemas y aplicaciones empresariales.
 - `Arquitectura basada en Microservicios`: Esta arquitectura divide una aplicación en pequeños servicios independientes que pueden ser desarrollados, desplegados y escalados de manera independiente. Es útil para aplicaciones escalables y mantenibles.
+<p align="center">
+  <img src="./assets/microservices.jpg" width="80%" alt="light bulb icon">
+</p>
 
 - `Arquitectura de Eventos EDA`: Esta arquitectura se basa en la comunicación a través de eventos. Los componentes emiten y escuchan eventos para interactuar entre sí. Es común en aplicaciones en tiempo real y sistemas distribuidos.
 - `Arquitectura Basada en Contenedores`: Se centra en la gestión de contenedores, como Docker, para facilitar la implementación y el despliegue de aplicaciones.
