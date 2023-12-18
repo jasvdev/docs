@@ -12,6 +12,7 @@
 
 [img_0]: ./assets/http.png
 [img_1]: ./assets/websocket.png
+[img_2]: ./assets/regex-cheats.jpg
 
 # Tabla de contenido
 
@@ -47,6 +48,19 @@
   - [Indexacion](#indexacion)
   - [Contenido](#contenido)
   - [Popularidad](#popularidad)
+- [Expresiones Regulares](#expresiones-regulares)
+  - [Chat Sheet](#chat-sheet)
+- [Gerencia de software](#gerencia-de-software)
+  - [Sectores tecnologicos comunes](#sectores-tecnologicos-comunes)
+    - [Frontend](#frontend)
+  - [Backend](#backend)
+  - [Datos](#datos)
+    - [Data warehouse](#data-warehouse)
+  - [Infraestructura:](#infraestructura)
+  - [Roles](#roles)
+  - [Proceso acertivo de contratacion](#proceso-acertivo-de-contratacion)
+  - [Idea de negocio](#idea-de-negocio)
+  - [Un buen líder y un buen equipo](#un-buen-líder-y-un-buen-equipo)
 
 # Metodología de diseño de software
 
@@ -416,3 +430,97 @@ Verificar el contenido de la pagina, que no este duplicado o extraido de otro si
 - `Redes Sociales`: Promociona tu contenido en las redes sociales para aumentar su visibilidad y atraer tráfico.
 - `Análisis y Monitoreo`: Utiliza herramientas de análisis y monitoreo, como Google Analytics y Google Search Console, para realizar un seguimiento del rendimiento de tu sitio y realizar ajustes según sea necesario.
 - `Optimización Móvil`: Asegúrate de que tu sitio web esté optimizado para dispositivos móviles, ya que los motores de búsqueda valoran la experiencia móvil.
+
+# Expresiones Regulares
+
+Sitio oficial de pruebas [regexr](https://regexr.com/)
+
+## Chat Sheet
+
+![img_2]
+
+# Gerencia de software
+
+Desicion de adquisicion de software
+
+- ¿Estamos creando una ventaja competitiva única para tu compañía? `Constrúyelo`
+- ¿Estamos creando una mejora iterativa que arregla algo que ya tenemos? `Delégalo`
+- ¿Estamos haciendo una automatización probada en un caso de estudio? `Cómpralo`
+
+## Sectores tecnologicos comunes
+
+### Frontend
+
+Esta es la parte visual de nuestros aplicativos, es decir la parte que llega donde el cliente, aplicaciones movil, sitio web o herramientas graficas en general.
+
+## Backend
+
+Esta es la parte donde se encuetra normalmente la logica de negocio, donde damos la capa de seguridad a los datos y hacemos integracion con otros sistemas.
+
+## Datos
+
+Esta parte es la encargada de recopilar todos los datos que sean utiles para la operacion de negocio, llamese un excel, datos de las bases de datos, datos de los logs de operacion o Csv en general.
+
+### Data warehouse
+
+Esto es lo que se conoce como bodega de datos, es la centralizacion y organizacion de todos los datos recopilados del negocio.
+
+Esto se transforma por medio de herramientas ETL's (), los cuales son operados por cientificos de datos que por medio de lenguajes de programacion como R o python, logran hacer scripts para adaptar estos datos y poderlos disponer en dashboard de metricas y estadisticas, donde muestren la salud de tu negocio, la ventas o las estadisticas que en este momento estan pasando con tu modelo de negocio.
+
+## Infraestructura:
+
+Esta parte es la encargada de montar el andamiage de configuracion y comunicacion de las diferentes capas que tenemos de tecnologia, manejando tambien la segurdad, escalabilidad y estabilidad de los sistemas.
+
+## Roles
+
+- `StakeHolder`: El beneficiario principal del proyecto y en algunas ocaciones es el encargado de aprobar el presupuesto del proyecto, asi que toma las desiciones del presupuesto.
+- `Product Owner`: Es la persona que normalmente se le delega que el proyecta salga bien, Representa las necesidades de la empresa ante el equipo de trabajo y funciona como medidador entre negocio y desarrollo, debe entender algo de tecnologia pero fundamental que entienda el negocio, la idea formulada y como afecta el negocio.
+- `CTO` : Decisiones estratégicas de tecnología, aliados, precios. (esta tecnología o esta otra?)
+- `VP Engineering` : Sabe de Tecnología, genera rutas de crecimiento del equipo, recluta y retiene talento.
+- `Project Manager/ Arquitecto de software`: Es importante que este cargo sepa ademas de administrar, el hacer, por tanto que domine como minimo un 80% la tecnologia o stack usado es muy importante para ganarse el respeto del equipo y los direccione de mejor manera. La persona encargada de elegir las bases del proyecto a nivel de tecnologia, comunmente asociado a un arquitecto de software.
+- `UI/UX Designers`: Realizan los mockups, wireframe, Diseños, Test de usabilidad, Entrevistas de usuarios (benchmark)
+- `Backends Devs`: Encargados de la programcion en lenguajes del lado del servidor, conexion a base de datos, logica de negocio, seguridad en los datos, transmision y despliegue de artefactos.
+- `Frontend/Mobile Devs`: Encargados del Look and feel, identidad empresarial, interfaces de interaccion y la visualizacion de la informacion.
+- `Data scientists`: Encargados de la herramientas ETL's (Extract, transform and load), ideas desde los datos, machine learning y dashboards
+- `Dev Ops`: Desarrollador de operaciones, se encarga de la seguridad informatica accesos permitos etc.. y todos los recursos de hardware necesarios para el funcionamiento de los aplicativos.
+
+## Proceso acertivo de contratacion
+
+- Director de area: Necesito un talento
+- Director de area: Describe el perfil y posiblemente lo busca
+- Recursos humanos: Busca el talento
+- Director de area: Define el filtro inicial
+- Director de area: Hace la entrevista inicial
+- Equipo de area: Hace la prueba tecnica
+- Recursos humanos: Hace la ultima entrevista, o feedback de las mismas
+- Recursos humanos: Escribe y envia la oferta o carta oferta
+- Recursos humanos + Equipo de area: Hace el onboarding empresa / labor
+
+Una buena prueba tecnica prueba pequeñas cosas de una manera muy enfocada, debe permitir completar en `menos de un dia` el `stack real` o mas aproximado de la empresa, asi mismo como la `condiciones reales` de trabajo con un reto que sea desafiente pero justo para el tiempo dado. Puede ser live coding con codigo ya escrito pidiendo ajustes puntuales o mandar un proyecto para realizacion.
+
+## Idea de negocio
+
+Siempre que se genera una posible mejora o un nuevo proyecto que soluciona algo, debemos hacer el ejercicio con los involucrados de la vision del negocio y resolver los 5 porques, para determinas si esa idea si esta con buenas bases. De aqui sabemos exactamente las especificaciones o las garantias que debemos de cumplir para que la idea cumpla su objetivo. Todos los interesados deben dar el SI y entender todo el proyecto.
+
+Aqui realizamos un `Mockup` (lapiz y papel) y luego `wireframe` (estrucuturas basicas con datos ) con el definimos el alcance del proyecto.
+
+Se realiza una planeacion basadas en entregables, basados en un primer MVP y luego iteraciones de funcionalidades completas o semicompletas para ir aumentando los entrgables en aras del objetivo final de la idea de negocio.
+
+De aqui en adelante se necesita iterar en el proceso de desarrollo evaluando la calidad del software, la experiencia de usuario y ajuste de espectativas.
+
+de aqui salen entregas, feedback etc..
+
+## Un buen líder y un buen equipo
+
+- Inspira compromiso en su equipo.
+- Facilita la colaboración
+- Desarrolla a otros (crecimiento).
+- Hacer que las cosas pasen (cumplir fechas)
+- Absorbe incertidumbre
+- Persevera y Enfoca.
+
+- `Seguridad Psicológica`: Los miembros del equipo sienten seguridad para tomar riesgos y ser vulnerables en frente del resto.
+- `Seriedad y Confianza`: Los miembros del equipo hacen que las cosas pasen a tiempo y con excelencia.
+- `Estructura y Claridad`: Cada miembro del equipo tiene su rol claro, planes y objetivos.
+- `Significado`: Lo que haces es importante para otros miembros del equipo.
+- `Impacto`: Los miembros del equipo saben que su trabajo importa y crea cambio.

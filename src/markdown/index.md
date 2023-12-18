@@ -36,6 +36,7 @@
 - [Cards Interactivas GitHub](#cards-interactivas-github)
 - [Imagenes](#imagenes)
 - [Contenido Colapsable](#contenido-colapsable)
+- [Notes en Github](#notes-en-github)
 
 # Titulos
 
@@ -297,3 +298,20 @@ Imagen centrada, tamaño por defecto - Linkeada
 ![img_0]
 
 </details>
+
+# Notes en Github
+
+> [!NOTE]  
+> Highlights information that users should take into account, even when skimming.
+
+> [!TIP]
+> Optional information to help a user be more successful.
+
+> [!IMPORTANT]  
+> Crucial information necessary for users to succeed.
+
+> [!WARNING]  
+> Critical content demanding immediate user attention due to potential risks.
+
+> [!CAUTION]
+> Negative potential consequences of an action.
