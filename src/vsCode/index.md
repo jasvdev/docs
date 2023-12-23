@@ -61,6 +61,8 @@ Configuracion inicial del `setting.json`
 {
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.sideBar.location": "right",
+  "workbench.activityBar.location": "hidden",
+  "workbench.tree.enableStickyScroll": true,
   "editor.linkedEditing": true,
   "editor.tabSize": 2,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -68,6 +70,7 @@ Configuracion inicial del `setting.json`
   "editor.formatOnSave": true,
   "editor.stickyScroll.enabled": true,
   "editor.minimap.maxColumn": 80,
+  "editor.inlineSuggest.showToolbar": "onHover",
   "breadcrumbs.enabled": false
 }
 ```

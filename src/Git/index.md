@@ -20,7 +20,6 @@
 - [Git](#git)
   - [Glosario](#glosario)
   - [Ciclo de vida del fichero (states)](#ciclo-de-vida-del-fichero-states)
-  - [Comands](#comands)
 - [Git Flow](#git-flow)
   - [Proceso inicial](#proceso-inicial)
   - [Develop - FEATURE/FIX](#develop---featurefix)
@@ -34,7 +33,12 @@
   - [CommitLint Config](#commitlint-config)
   - [Tool for Git client](#tool-for-git-client)
   - [Doc's](#docs)
-  - [Tabla de alias](#tabla-de-alias)
+  - [Tabla de Commandos y alias](#tabla-de-commandos-y-alias)
+    - [Git Setup/Config](#git-setupconfig)
+    - [Git Files](#git-files)
+    - [Git Working tree](#git-working-tree)
+    - [Git Remote](#git-remote)
+    - [Git Utils](#git-utils)
   - [Alias for .gitconfig](#alias-for-gitconfig)
 
 # Git
@@ -66,103 +70,6 @@ Git ([sitio oficial]) es un sistema de control de versiones distribuido gratuito
 - `Modified` : Archivo ya en repositorio, que fue modificado
 - `Staged` : Archivo con algun cambio/Nuevo listo para agregarse al Repositorio
 - `Unmodified` : Archivo en el repositorio, en estado final de verdad, segun la rama
-
-## Comands
-
-<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
-
-| Command Bash Console | Description                             |
-| -------------------- | --------------------------------------- |
-| `ls -la`             | Ver los archivos del working directory. |
-| `touch filename.ext` | Crea un archivo con la extencion.       |
-| `mkdir newfolder`    | Crea una nueva carpeta.                 |
-| `rm filename.ext`    | Remueve un archivo.                     |
-| `rm -rf newfolder`   | Elimina una carpeta.                    |
-
-| Command Git Setup/Config                                                       | Description                                                                                                                                                                                                                                                                                                   |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `git --version`                                                                | version del git.                                                                                                                                                                                                                                                                                              |
-| `git init`                                                                     | Creará un nuevo repositorio local GIT. Usando git init [nombre del proyecto] También puedes crear un repositorio dentro de un directorio especificando el nombre del proyecto.                                                                                                                                |
-| `git clone`                                                                    | Lo usas para clonar un repositorio.                                                                                                                                                                                                                                                                           |
-| `git gc`                                                                       | Activa el garbage colector de GIT.                                                                                                                                                                                                                                                                            |
-| `git config`                                                                   | Lo usas para establecer una configuración específica de usuario, podría ser el email, usuario o alias de manera local en el repositorio.                                                                                                                                                                      |
-| `git config --list`                                                            | lista la configuracion.                                                                                                                                                                                                                                                                                       |
-| `git config user.name "name"`                                                  | Nos permite configurar un usuario y un email para los commits, si se usa la bandera `--global` se configura de forma global.                                                                                                                                                                                  |
-| `git config user.email "emai"`                                                 | Nos permite configurar un usuario y un email para los commits, si se usa la bandera `--global` se configura de forma global.                                                                                                                                                                                  |
-| `git config --global`                                                          | Lo usas para establecer una configuración específica de usuario, podría ser el email, usuario o alias de manera global para la maquina que tiene git instalado.                                                                                                                                               |
-| `git config --global alias.nameCommand 'log --oneline decorate --all --graph'` | Creando un **COMANDO PERSONALIZADO** un alias con el nombre "nameCommand" con las instrucciones de log, importante no se usa la palabra git dentro de los alias. Tambien se aclara que de un alias, se puede seguir enviando flags naturales del comando que empaqueta el alias y se ejecuta de forma natural |
-| `git config --global --unset alias.nameCommand`                                | Elimina el **COMANDO PERSONALIZADO** alias o la configuracion que se indique                                                                                                                                                                                                                                  |
-
-| Command Git Basic              | Description                                                                                                                                                        |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `git status`                   | Lo usas para que muestre la lista de archivos que has cambiado, junto con archivos que serán preparados y confirmados.                                             |
-| `git add`                      | Lo usas para agregar archivos al área de de preparación (stage).                                                                                                   |
-| `git diff`                     | Muestra el listado total de cambios realizados sobre el working directoryarea.                                                                                     |
-| `git diff --staged`            | Muestra el listado total de cambios realizados sobre el stage area.                                                                                                |
-| `git diff commitA...commitB`   | Muestra el listado total de cambios entre dos commits o tags o branch.                                                                                             |
-| `git commit`                   | Lo usas para crear un cambio que se guardará en el directorio git.                                                                                                 |
-| `git commit --ament`           | Lo usas para enmendar el ultimo commit, bien sea para cambiar el mensaje o el contenido de los cambio, lo que se hace es fusionar los cambios de ambos de commits. |
-| `git commit --ament --no-edit` | Lo usas para enmendar el ultimo commit, sin cambiar el mensaje del ultimo commit solo el contenido.                                                                |
-| `git restore file`             | Nos permite restaurar un archivo del working area a su estado original en HEAD.                                                                                    |
-| `git restore file`             | Nos permite restaurar un archivo del working area a su estado original en HEAD.                                                                                    |
-| `git reset --hard`             | Nos permite resetear estado original en HEAD.                                                                                                                      |
-| `git reset HEAD file.txt`      | Nos permite restablecer un archivo el cual ya tiene cambios guardados, en el stage area.                                                                           |
-| `git rm Documentation/\*.txt`  | Elimina archivos del árbol de trabajo y del índice, recibe expresiones como patrón.                                                                                |
-| `git mv <origen> <destino>`    | mueve o cambia el nombre de un archivo o un directorio.                                                                                                            |
-
-| Command Branching and Merging        | Description                                                                                                                        |
-| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| `git branch`                         | Lista las ramas locales.                                                                                                           |
-| `git branch -l`                      | Lista las ramas locales.                                                                                                           |
-| `git branch --remote`                | Lista las ramas remotas.                                                                                                           |
-| `git branch -a`                      | Lista todas las ramas del repositorio.                                                                                             |
-| `git branch name`                    | Crea una nueva rama partiendo de la actual con el "name" como nombre.                                                              |
-| `git branch -m NameA NameB`          | Reemplaza el nombre de la rama "NameA" por "NameB" o la renombra.                                                                  |
-| `git branch -d name`                 | elimina la rama con el nombre "name".                                                                                              |
-| `git switch`                         | Nos permite navegar entre ramas o entre los tags o commits facilmente.                                                             |
-| `git switch -c name`                 | Nos permite crear y navegar a una rama.                                                                                            |
-| `git switch --discard-changes`       | Nos permite movernos de rama y descargar cambios rapidamente.                                                                      |
-| `git merge ramaExterna`              | Nos permite fusionar en la rama actual el contenido de una rama externa".                                                          |
-| `git tag`                            | Listar los tags locales.                                                                                                           |
-| `git tag v0.0.1`                     | Crea un tag y ponerle un nombre facil de buscar a un commit.                                                                       |
-| `git tag -d v0.0.1`                  | elimina un tag.                                                                                                                    |
-| `git stash -l`                       | Lista los stash almacenados.                                                                                                       |
-| `git stash apply idStash`            | aplica los cambios de un stash especifico.                                                                                         |
-| `git stash drop idStash`             | elimina el stash especifico.                                                                                                       |
-| `git stash branch brachName idStash` | crea una rama nueva apartir del stash especifico.                                                                                  |
-| `git stash save "mensaje"`           | Nos permite guardar cambios y limpiar nuestro working area, como un grupo parcial de cambios.                                      |
-| `git checkout`                       | Nos permite crear ramas y navegar entre ellas o entre los tags o commits.                                                          |
-| `git checkout -b branchName`         | Nos permite crear rama con "branchName" y navegar a ella.                                                                          |
-| `git checkout branchName`            | Nos permite navegar a la rama seleccionada.                                                                                        |
-| `git checkout -- file.txt`           | Nos permite restablecer el working area actual basado en una rama, tag, archivo de rama o archivo tag del HEAD de cada tag o rama. |
-
-| Command Git Patching                       | Description                                                                                                                                             |
-| ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `git revert commit`                        | Nos permite revertir todas las lineas de un commit en un nuevo commit.                                                                                  |
-| `git revert --no-commit commit`            | Nos permite revertir sin tener que realizar un commit para ello, queda en el working area para hacer mas modificaciones o mas revert's.                 |
-| `git revert --continue`                    | para realizar el commit final del revert.                                                                                                               |
-| `git rebase <branch-origen> <branch>`      | Vuelva a aplicar commits encima de otra base.                                                                                                           |
-| `git rebase --continue`                    | Al poseer conflictos y solucionarlos, del intereactivo y continuar.                                                                                     |
-| `git rebase --abort`                       | cancela rebase interactivo.                                                                                                                             |
-| `git cherry-pick <commit>`                 | Aplicar un commit especifico.                                                                                                                           |
-| `git log`                                  | Listado de commits de forma detallada realizados sobre la rama actual.                                                                                  |
-| `git log --oneline`                        | Listado de commits en una linea realizados sobre la rama actual.                                                                                        |
-| `git log --oneline -decorate`              | Listado de commits en una linea realizados sobre la rama actual y adicional señala el HEAD y las ramas locales.                                         |
-| `git log --oneline -decorate --all`        | Listado de commits en una linea realizados sobre la rama actual y adicional señala el HEAD y las ramas de todo el repositorio.                          |
-| `git log --oneline -decorate --all -graph` | Listado de commits en una linea realizados sobre la rama actual y adicional señala el HEAD y las ramas de todo el repositorio con una grafica de ramas. |
-
-| Command Git Remote | Description                                                                                                     |
-| ------------------ | --------------------------------------------------------------------------------------------------------------- |
-| `git remote`       | Nos permite ver todos los repositorios remotos.                                                                 |
-| `git pull`         | Lo usas para fusionar todos los cambios que hiciste en el repositorio local con el directorio de trabajo local. |
-| `git fetch origin` | Se usa para fusionar la rama remota con la rama local.                                                          |
-| `git push`         | Lo usas para enviar confirmaciones a la rama maestra/principal del repositorio remoto.                          |
-
-| Command Git hacks                               | Description                                                                  |
-| ----------------------------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| `git update-index --assume-unchanged <file>`    | para dejar el archivo en el repositorio pero ignorar cambios futurosremotos. |
-| `git update-index --no-assume-unchanged <file>` | para deshacer                                                                |
-| `git ls-files -v                                | grep '^h'`                                                                   | para averiguar qué archivos se han configurado de esta manera |
 
 # Git Flow
 
@@ -348,383 +255,258 @@ Especificación para dar significado a los mensajes de los commits haciéndolos 
 - [Conventional changelog](https://github.com/conventional-changelog/conventional-changelog)
 - [Husky](https://typicode.github.io/husky/)
 
-## Tabla de alias
+## Tabla de Commandos y alias
 
 <sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
-| | Comando | Descripcion |
-| --- | --------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| ⭐ | `git ga` | git add |
-| ⭐ | `git gaa` | git add --all |
-| | `git gapa` | git add --patch |
-| | `git gau` | git add --update |
-| | `git gav` | git add --verbose |
-| | `git gwip` | git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]" |
-|     | `git gam`       | git am                                                                                                                        |
-|     | `git gama`      | git am --abort                                                                                                                |
-|     | `git gamc`      | git am --continue                                                                                                             |
-|     | `git gamscp`    | git am --show-current-patch                                                                                                   |
-|     | `git gams`      | git am --skip                                                                                                                 |
-|     | `git gap`       | git apply                                                                                                                     |
-|     | `git gapt`      | git apply --3way                                                                                                              |
-|     | `git gbs`       | git bisect                                                                                                                    |
-|     | `git gbsb`      | git bisect bad                                                                                                                |
-|     | `git gbsg`      | git bisect good                                                                                                               |
-|     | `git gbsn`      | git bisect new                                                                                                                |
-|     | `git gbso`      | git bisect old                                                                                                                |
-|     | `git gbsr`      | git bisect reset                                                                                                              |
-|     | `git gbss`      | git bisect start                                                                                                              |
-|     | `git gbl`       | git blame -w                                                                                                                  |
-| ⭐   | `git gb`        | git branch                                                                                                                    |
-|     | `git gba`       | git branch --all                                                                                                              |
-|     | `git gbd`       | git branch --delete                                                                                                           |
-|     | `git gbD`       | git branch --delete --force                                                                                                   |
-|     | `git gbm`       | git branch --move                                                                                                             |
-|     | `git gbnm`      | git branch --no-merged                                                                                                        |
-|     | `git gbr`       | git branch --remote                                                                                                           |
-|     | `git ggsup`     | git branch --set-upstream-to=origin/$(git_current_branch) |
-| ⭐ | `git gco` | git checkout |
-| | `git gcor` | git checkout --recurse-submodules |
-| | `git gcb` | git checkout -b |
-| | `git gcd` | git checkout $(git_develop_branch)                                                                                            |
-|     | `git gcm`       | git checkout $(git_main_branch)                                                                                               |
-|     | `git gcp`       | git cherry-pick                                                                                                               |
-|     | `git gcpa`      | git cherry-pick --abort                                                                                                       |
-|     | `git gcpc`      | git cherry-pick --continue                                                                                                    |
-|     | `git gclean`    | git clean --interactive -d                                                                                                    |
-|     | `git gcl`       | git clone --recurse-submodules                                                                                                |
-|     | `git gcam`      | git commit --all --message                                                                                                    |
-|     | `git gcas`      | git commit --all --signoff                                                                                                    |
-|     | `git gcasm`     | git commit --all --signoff --message                                                                                          |
-|     | `git gcmsg`     | git commit --message                                                                                                          |
-|     | `git gcsm`      | git commit --signoff --message                                                                                                |
-|     | `git gc`        | git commit --verbose                                                                                                          |
-|     | `git gca`       | git commit --verbose --all                                                                                                    |
-|     | `git gca`       | git commit --verbose --all --amend                                                                                            |
-|     | `git gcan`      | git commit --verbose --all --no-edit --amend                                                                                  |
-|     | `git gcans`     | git commit --verbose --all --signoff --no-edit --amend                                                                        |
-|     | `git gc`        | git commit --verbose --amend                                                                                                  |
-|     | `git gcn`       | git commit --verbose --no-edit --amend                                                                                        |
-|     | `git gcs`       | git commit -S                                                                                                                 |
-|     | `git gcss`      | git commit -S -s                                                                                                              |
-|     | `git gcssm`     | git commit -S -s -m                                                                                                           |
-|     | `git gcf`       | git config --list                                                                                                             |
-|     | `git gdct`      | git describe --tags $(git rev-list --tags --max-count=1)                                                                      |
-|     | `git gd`        | git diff                                                                                                                      |
-|     | `git gdca`      | git diff --cached                                                                                                             |
-|     | `git gdcw`      | git diff --cached --word-diff                                                                                                 |
-|     | `git gds`       | git diff --staged                                                                                                             |
-|     | `git gdw`       | git diff --word-diff                                                                                                          |
-|     | `git gdv`       | git diff -w "$@" view - |
-| | `git gdup` | git diff @{upstream} |
-| | `git gdt` | git diff-tree --no-commit-id --name-only -r |
-| | `git gf` | git fetch |
-| | `git gfa` | git fetch --all --prune |
-| | `git gfo` | git fetch origin |
-| | `git gg` | git gui citool |
-| | `git gga` | git gui citool --amend |
-| | `git ghh` | git help |
-| | `git glgg` | git log --graph |
-| | `git glgga` | git log --graph --decorate --all |
-| | `git glgm` | git log --graph --max-count=10 |
-| | `git glod` | git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' |
-| | `git glods` | git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short |
-| | `git glol` | git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' |
-| | `git glola` | git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all |
-| | `git glols` | git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat |
-| | `git glo` | git log --oneline --decorate |
-| | `git glog` | git log --oneline --decorate --graph |
-| | `git gloga` | git log --oneline --decorate --graph --all |
-| | `git glp` | git log --pretty=<format> |
-| | `git glg` | git log --stat |
-| | `git glgp` | git log --stat --patch |
-| | `git gignored` | git ls-files -v grep "^[[:lower:]]" |
-| | `git gfg` | git ls-files grep |
-| | `git gm` | git merge |
-| | `git gma` | git merge --abort |
-| | `git gms` | git merge --squash |
-| | `git gmom` | git merge origin/$(git_main_branch)                                                                                           |
-|     | `git gmum`      | git merge upstream/$(git_main_branch) |
-| | `git gmtl` | git mergetool --no-prompt |
-| | `git gmtlvim` | git mergetool --no-prompt --tool=vimdiff |
-| | `git gl` | git pull |
-| | `git gpr` | git pull --rebase |
-| | `git gup` | git pull --rebase |
-| | `git gupa` | git pull --rebase --autostash |
-| | `git gupav` | git pull --rebase --autostash --verbose |
-| | `git gupv` | git pull --rebase --verbose |
-| | `git ggu` | git pull --rebase origin $(current_branch)                                                                                    |
-|     | `git gupom`     | git pull --rebase origin $(git_main_branch)                                                                                   |
-|     | `git gupomi`    | git pull --rebase=interactive origin $(git_main_branch)                                                                       |
-|     | `git ggpull`    | git pull origin "$(git_current_branch)" |
-| | `git ggl` | git pull origin $(current_branch)                                                                                             |
-|     | `git gluc`      | git pull upstream $(git_current_branch)                                                                                       |
-|     | `git glum`      | git pull upstream $(git_main_branch)                                                                                          |
-|     | `git gp`        | git push                                                                                                                      |
-|     | `git gpd`       | git push --dry-run                                                                                                            |
-|     | `git gpf`       | git push --force                                                                                                              |
-|     | `git ggf`       | git push --force origin $(current_branch)                                                                                     |
-|     | `git gpf`       | git push --force-with-lease --force-if-includes                                                                               |
-|     | `git gpf`       | git push --force-with-lease                                                                                                   |
-|     | `git ggfl`      | git push --force-with-lease origin $(current_branch)                                                                          |
-|     | `git gpsup`     | git push --set-upstream origin $(git_current_branch)                                                                          |
-|     | `git gpsupf`    | git push --set-upstream origin $(git_current_branch) --force-with-lease --force-if-includes                                   |
-|     | `git gpsupf`    | git push --set-upstream origin $(git_current_branch) --force-with-lease                                                       |
-|     | `git gpv`       | git push --verbose                                                                                                            |
-|     | `git gpoat`     | git push origin --all && git push origin --tags                                                                               |
-|     | `git gpod`      | git push origin --delete                                                                                                      |
-|     | `git ggpush`    | git push origin "$(git_current_branch)" |
-| | `git ggp` | git push origin $(current_branch)                                                                                             |
-|     | `git gpu`       | git push upstream                                                                                                             |
-|     | `git grb`       | git rebase                                                                                                                    |
-|     | `git grba`      | git rebase --abort                                                                                                            |
-|     | `git grbc`      | git rebase --continue                                                                                                         |
-|     | `git grbi`      | git rebase --interactive                                                                                                      |
-|     | `git grbo`      | git rebase --onto                                                                                                             |
-|     | `git grbs`      | git rebase --skip                                                                                                             |
-|     | `git grbd`      | git rebase $(git_develop_branch)                                                                                              |
-|     | `git grbm`      | git rebase $(git_main_branch)                                                                                                 |
-|     | `git grbom`     | git rebase origin/$(git_main_branch) |
-| | `git gr` | git remote |
-| | `git grv` | git remote --verbose |
-| | `git gra` | git remote add |
-| | `git grrm` | git remote remove |
-| | `git grmv` | git remote rename |
-| | `git grset` | git remote set-url |
-| | `git grup` | git remote update |
-| | `git grh` | git reset |
-| | `git gru` | git reset -- |
-| | `git grhh` | git reset --hard |
-| | `git grhk` | git reset --keep |
-| | `git grhs` | git reset --soft |
-| | `git gpristine` | git reset --hard && git clean -dffx |
-| | `git groh` | git reset origin/$(git_current_branch) --hard |
-| | `git grs` | git restore |
-| | `git grss` | git restore --source |
-| | `git grst` | git restore --staged |
-| | `git gunwip` | git rev-list --max-count=1 --format="%s" HEAD grep -q "--wip--" && git reset HEAD~1 |
-| | `git grev` | git revert |
-| | `git grm` | git rm |
-| | `git grmc` | git rm --cached |
-| | `git gcount` | git shortlog --summary -n |
-| | `git gsh` | git show |
-| | `git gsps` | git show --pretty=short --show-signature |
-| | `git gstall` | git stash --all |
-| | `git gstu` | git stash --include-untracked |
-| | `git gstaa` | git stash apply |
-| | `git gstc` | git stash clear |
-| | `git gstd` | git stash drop |
-| | `git gstl` | git stash list |
-| | `git gstp` | git stash pop |
-| | `git gsta` | git stash push |
-| | `git gsta` | git stash save |
-| | `git gsts` | git stash show --patch |
-| | `git gst` | git status |
-| | `git gss` | git status --short |
-| | `git gsb` | git status --short -b |
-| | `git gsi` | git submodule init |
-| | `git gsu` | git submodule update |
-| | `git gsw` | git switch |
-| | `git gswc` | git switch -c |
-| | `git gswd` | git switch $(git_develop_branch) |
-| | `git gswm` | git switch $(git_main_branch) |
-| | `git gta` | git tag --annotate |
-| | `git gts` | git tag -s |
-| | `git gtv` | git tag sort -V |
-| | `git gignore` | git update-index --assume-unchanged |
-| | `git gunignore` | git update-index --no-assume-unchanged |
-| | `git gwch` | git whatchanged -p --abbrev-commit --pretty=medium |
-| | `git gwt` | git worktree |
-| | `git gwtls` | git worktree list |
-| | `git gwtmv` | git worktree move |
-| | `git gwtrm` | git worktree remove |
+
+```javascript
+// flags utils
+HEAD
+HEAD~1
+HEAD~5
+--no-verify
+--verbose
+--global
+
+--continue
+--abort
+--skip
+--interactive
+```
+
+### Git Setup/Config
+
+|     | Alias      | Comando                                          | Descripcion                                           |
+| --- | ---------- | ------------------------------------------------ | ----------------------------------------------------- |
+| ⭐  | `git v`    | `git --version`                                  | version del git.                                      |
+| ⭐  | `git i`    | `git init`                                       | Creará un nuevo repositorio local GIT. <NameProyect?> |
+| ⭐  | `git gc`   | `git gc`                                         | Activa el garbage colector de git                     |
+| ⭐  | `git cf`   | `git config`                                     | set configuracion local                               |
+| ⭐  | `git cfl`  | `git config --list`                              | Lista configuracion local                             |
+| ⭐  | `git cfla` | `git config --get-regexp alias`                  | Lista todos los alias                                 |
+| ⭐  | `git cflu` | `git config --get-regexp user`                   | Lista la configuracion de usuario                     |
+| ⭐  | `git cfun` | `git config user.name`                           | Actualiza el nombre del usuario "name"                |
+| ⭐  | `git cfue` | `git config user.email`                          | Actualiza el email del usuario "email"                |
+| ➖  | `--- ---`  | `git config --global alias.name 'log --oneline'` | Crea un alias personalizado                           |
+
+### Git Files
+
+|     | Alias       | Comando                         | Descripcion                                                         |
+| --- | ----------- | ------------------------------- | ------------------------------------------------------------------- |
+| ⭐  | `git st`    | `git status`                    | estado actual del local                                             |
+| ⭐  | `git sts`   | `git status --short`            | estado resumido del local                                           |
+| ⭐  | `git stb`   | `git status --short --branch`   | estado resumido del local con ramas                                 |
+| ⭐  | `git df`    | `git diff --word-diff`          | Muestra las diferencias en el working dir                           |
+| ⭐  | `git dfs`   | `git diff --word-diff --staged` | Muestra las diferencias en el staged area                           |
+| ⭐  | `git a`     | `git add`                       | agrega archivos o regexp al staging area                            |
+| ⭐  | `git aa`    | `git add --all`                 | agrega todos los archivos del working al staging area = 'git add .' |
+| ⭐  | `git ap`    | `git add --patch`               | agrega paso a paso cada cambio en cada archivo                      |
+| ⭐  | `git au`    | `git add --update`              | agrega solo archivos actualizados o eliminados                      |
+| ⭐  | `git rs`    | `git restore`                   | <File name> restaura un File o RegExp                               |
+| ⭐  | `git rsa`   | `git restore .`                 | Restura el working directory, no elimina nuevos                     |
+| ⭐  | `git rss`   | `git reset`                     | Restura el staged                                                   |
+| ⭐  | `git rsh`   | `git reset --hard`              | Restaura todo                                                       |
+| ➖  | `git clean` | `git clean -f -d`               | Eliminar archivos nuevos solo del working dir                       |
+| ➖  | `--- ---`   | `git rm`                        | Elimina archivos de working dir y del índice, File o RegExp         |
+| ➖  | `--- ---`   | `git mv`                        | Mueve o cambia el nombre de un archivo o carpeta <origen> <destino> |
+| ⭐  | `git sh`    | `git stash`                     |                                                                     |
+| ⭐  | `git shl`   | `git stash list`                |                                                                     |
+| ⭐  | `git shall` | `git stash --all`               |                                                                     |
+| ⭐  | `git shu`   | `git stash --include-untracked` |                                                                     |
+| ⭐  | `git sha`   | `git stash apply`               | aplica los cambios de un stash especifico.                          |
+| ⭐  | `git shd`   | `git stash drop`                | elimina el stash especifico.                                        |
+| ⭐  | `git shcl`  | `git stash clear`               |                                                                     |
+| ⭐  | `git shs`   | `git stash show --patch`        |                                                                     |
+
+### Git Working tree
+
+|     | Alias      | Comando                                    | Descripcion                                                                            |
+| --- | ---------- | ------------------------------------------ | -------------------------------------------------------------------------------------- |
+| ⭐  | `git cm`   | `git commit --message`                     | Crea una confirmacion con un mensaje                                                   |
+| ⭐  | `git cmx`  | `git commit --no-verify --message`         | Crea una confirmacion con un mensaje sin hooks                                         |
+| ⭐  | `git cma`  | `git commit --no-edit --amend`             | Crear un arreglo de commit sin editar el mensaje                                       |
+| ⭐  | `git cmax` | `git commit --no-verify --no-edit --amend` | Crear un arreglo de commit sin editar el mensaje y sin hooks                           |
+| ⭐  | `git cmae` | `git commit --amend`                       | Crear un arreglo de commit con mensaje                                                 |
+| ⭐  | `git rev`  | `git revert HEAD`                          | Nos permite revertir el ultimos commit                                                 |
+| ⭐  | `git revn` | `git revert -n HEAD`                       | Nos permite revertir varios commits                                                    |
+| ⭐  | `git b`    | `git branch`                               | Listar todos los branches existente en un repositorio local o crea una <name?>         |
+| ⭐  | `git br`   | `git branch --remote`                      | Listar todos los branches existente en un repositorio Remotos                          |
+| ⭐  | `git ba`   | `git branch --all`                         | Listar todos los branches existente en un repositorio local y remoto                   |
+| ⭐  | `git bm`   | `git branch --no-merged`                   | Listar todos excluyen branchs con merge en branch principal                            |
+| ⭐  | `git bd`   | `git branch --delete`                      |                                                                                        |
+| ⭐  | `git bdf`  | `git branch --delete --force`              |                                                                                        |
+| ⭐  | `git brn`  | `git branch -m`                            | Rename de branch <oldName> <newName>                                                   |
+| ⭐  | `git bsup` | `git branch --set-upstream-to=`            | El comando especifica el branch existente debe estar conectado al branch origin/branch |
+| ⭐  | `git sw`   | `git switch`                               | Nos permite navegar entre ramas o entre los tags o commits facilmente.                 |
+| ⭐  | `git swx`  | `git switch --discard-changes`             | Nos permite movernos de rama y descargar cambios rapidamente.                          |
+| ⭐  | `git swc`  | `git switch -c`                            | Crear un nuevo branch y cambiar a ese branch                                           |
+| ➖  | `git ck`   | `git checkout`                             |                                                                                        |
+| ➖  | `git ckb`  | `git checkout -b`                          | Crear un nuevo branch y cambiar a ese branch                                           |
+| ⭐  | `git mg`   | `git merge`                                | <branch> Combina la rama en la actual                                                  |
+| ⭐  | `git mgs`  | `git merge --squash`                       | <branch> Combina la rama en la actual agruapando los commits en uno solo               |
+| ⭐  | `git chp`  | `git cherry-pick`                          |                                                                                        |
+| ⭐  | `git rb`   | `git rebase`                               | <branch remota> solo para branchs locales que no se han subido                         |
+| ⭐  | `git rbi`  | `git rebase -i`                            | Edicion de commits de rama local                                                       |
+
+### Git Remote
+
+|     | Alias       | Comando                                           | Descripcion                                     |
+| --- | ----------- | ------------------------------------------------- | ----------------------------------------------- |
+| ⭐  | `git cl`    | `git clone --recurse-submodules`                  |                                                 |
+| ⭐  | `git fh`    | `git fetch`                                       |                                                 |
+| ⭐  | `git fha`   | `git fetch --all --prune`                         |                                                 |
+| ⭐  | `git pl`    | `git pull`                                        |                                                 |
+| ⭐  | `git plr`   | `git pull --rebase`                               |                                                 |
+| ⭐  | `git plra`  | `git pull --rebase --autostash`                   |                                                 |
+| ➖  | `git plo`   | `git pull origin`                                 |                                                 |
+| ➖  | `git pls`   | `git pull upstream`                               |                                                 |
+| ⭐  | `git ps`    | `git push`                                        |                                                 |
+| ⭐  | `git psf`   | `git push --force`                                |                                                 |
+| ⭐  | `git psup`  | `git push --set-upstream origin`                  |                                                 |
+| ➖  | `git pso`   | `git push origin --all && git push origin --tags` |                                                 |
+| ⭐  | `git pss`   | `git push upstream`                               |                                                 |
+| ⭐  | `git rr`    | `git remote`                                      | Nos permite ver todos los repositorios remotos. |
+| ⭐  | `git rra`   | `git remote add`                                  |                                                 |
+| ⭐  | `git rrrm`  | `git remote remove`                               |                                                 |
+| ⭐  | `git rrmv`  | `git remote rename`                               |                                                 |
+| ➖  | `git rrset` | `git remote set-url`                              |                                                 |
+| ➖  | `git rrup`  | `git remote update`                               |                                                 |
+| ⭐  | `git tg`    | `git tag`                                         | Lista los tags o <nameTag> crea una nueva tag   |
+| ⭐  | `git tgd`   | `git tag -d`                                      | Elimina un tag                                  |
+
+### Git Utils
+
+|     | Alias      | Comando                                      | Descripcion                                                     |
+| --- | ---------- | -------------------------------------------- | --------------------------------------------------------------- |
+| ⭐  | `git rlog` | `git reflog`                                 |                                                                 |
+| ⭐  | `git log0` | `git log --oneline --decorate --all --graph` |                                                                 |
+| ⭐  | `git log1` | `git log --oneline --decorate --all`         |                                                                 |
+| ➖  | `git log2` | `git log --oneline --decorate --graph`       |                                                                 |
+| ➖  | `git log3` | `git log --graph --decorate --all`           |                                                                 |
+| ➖  | `git log4` | `git log --stat`                             |                                                                 |
+| ➖  | `git ls`   | `git ls-files -v`                            | Lista todos los archivos del working dir                        |
+| ➖  | `git lsm`  | `git ls-files -v -m`                         | Lista archivos modificados del working dir                      |
+| ➖  | `git lsd`  | `git ls-files -v -d`                         | Lista archivos eliminados del working dir                       |
+| ➖  | `--- ---`  | `git am`                                     | aplica una serie de parches                                     |
+| ➖  | `--- ---`  | `git apply`                                  | aplica un parche a archivos y/o al índice                       |
+| ➖  | `git sec`  | `git bisect`                                 | Ayuda a encontrar fallos en codigo, partiendo de un commit y va |
+| ➖  | `git secb` | `git bisect bad`                             |                                                                 |
+| ➖  | `git secg` | `git bisect good`                            |                                                                 |
+| ➖  | `git secr` | `git bisect reset`                           |                                                                 |
+| ➖  | `git secs` | `git bisect start`                           |                                                                 |
+| ➖  | `git bl`   | `git blame -w -e`                            | Identifica el autor de cada linea de un archivo                 |
+| ⭐  | `git us`   | `git shortlog --summary`                     | Lista los contribuidores ordenados alfabeticamente              |
+| ⭐  | `git usn`  | `git shortlog --summary -n`                  | Lista los contribuidores ordenados por numero de commits        |
+| ➖  | `git hh`   | `git help`                                   |                                                                 |
+| ⭐  | `git wt`   | `git worktree`                               |                                                                 |
+| ⭐  | `git wtls` | `git worktree list`                          |                                                                 |
+| ⭐  | `git wtmv` | `git worktree move`                          |                                                                 |
+| ⭐  | `git wtrm` | `git worktree remove`                        |                                                                 |
 
 ## Alias for .gitconfig
 
 <sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ```
-  ga = add
-  gaa = add --all
-  gapa = add --patch
-  gau = add --update
-  gav = add --verbose
-  gwip = add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"
-  gam = am
-  gama = am --abort
-  gamc = am --continue
-  gamscp = am --show-current-patch
-  gams = am --skip
-  gap = apply
-  gapt = apply --3way
-  gbs = bisect
-  gbsb = bisect bad
-  gbsg = bisect good
-  gbsn = bisect new
-  gbso = bisect old
-  gbsr = bisect reset
-  gbss = bisect start
-  gbl = blame -w
-  gb = branch
-  gba = branch --all
-  gbd = branch --delete
-  gbD = branch --delete --force
-  gbm = branch --move
-  gbnm = branch --no-merged
-  gbr = branch --remote
-  ggsup = branch --set-upstream-to=origin/$(git_current_branch)
-  gco = checkout
-  gcor = checkout --recurse-submodules
-  gcb = checkout -b
-  gcd = checkout $(git_develop_branch)
-  gcm = checkout $(git_main_branch)
-  gcp = cherry-pick
-  gcpa = cherry-pick --abort
-  gcpc = cherry-pick --continue
-  gclean = clean --interactive -d
-  gcl = clone --recurse-submodules
-  gcam = commit --all --message
-  gcas = commit --all --signoff
-  gcasm = commit --all --signoff --message
-  gcmsg = commit --message
-  gcsm = commit --signoff --message
-  gc = commit --verbose
-  gca = commit --verbose --all
-  gca = commit --verbose --all --amend
-  gcan = commit --verbose --all --no-edit --amend
-  gcans = commit --verbose --all --signoff --no-edit --amend
-  gc = commit --verbose --amend
-  gcn = commit --verbose --no-edit --amend
-  gcs = commit -S
-  gcss = commit -S -s
-  gcssm = commit -S -s -m
-  gcf = config --list
-  gdct = describe --tags $(git rev-list --tags --max-count=1)
-  gd = diff
-  gdca = diff --cached
-  gdcw = diff --cached --word-diff
-  gds = diff --staged
-  gdw = diff --word-diff
-  gdv = diff -w "$@"  view -
-  gdup = diff @{upstream}
-  gdt = diff-tree --no-commit-id --name-only -r
-  gf = fetch
-  gfa = fetch --all --prune
-  gfo = fetch origin
-  gg = gui citool
-  gga = gui citool --amend
-  ghh = help
-  glgg = log --graph
-  glgga = log --graph --decorate --all
-  glgm = log --graph --max-count=10
-  glod = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset'
-  glods = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=short
-  glol = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset'
-  glola = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all
-  glols = log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat
-  glo = log --oneline --decorate
-  glog = log --oneline --decorate --graph
-  gloga = log --oneline --decorate --graph --all
-  glp = log --pretty=<format>
-  glg = log --stat
-  glgp = log --stat --patch
-  gignored = ls-files -v grep "^[[:lower:]]"
-  gfg = ls-files grep
-  gm = merge
-  gma = merge --abort
-  gms = merge --squash
-  gmom = merge origin/$(git_main_branch)
-  gmum = merge upstream/$(git_main_branch)
-  gmtl = mergetool --no-prompt
-  gmtlvim = mergetool --no-prompt --tool=vimdiff
-  gl = pull
-  gpr = pull --rebase
-  gup = pull --rebase
-  gupa = pull --rebase --autostash
-  gupav = pull --rebase --autostash --verbose
-  gupv = pull --rebase --verbose
-  ggu = pull --rebase origin $(current_branch)
-  gupom = pull --rebase origin $(git_main_branch)
-  gupomi = pull --rebase=interactive origin $(git_main_branch)
-  ggpull = pull origin "$(git_current_branch)"
-  ggl = pull origin $(current_branch)
-  gluc = pull upstream $(git_current_branch)
-  glum = pull upstream $(git_main_branch)
-  gp = push
-  gpd = push --dry-run
-  gpf = push --force
-  ggf = push --force origin $(current_branch)
-  gpf = push --force-with-lease --force-if-includes
-  gpf = push --force-with-lease
-  ggfl = push --force-with-lease origin $(current_branch)
-  gpsup = push --set-upstream origin $(git_current_branch)
-  gpsupf = push --set-upstream origin $(git_current_branch) --force-with-lease --force-if-includes
-  gpsupf = push --set-upstream origin $(git_current_branch) --force-with-lease
-  gpv = push --verbose
-  gpoat = push origin --all && git push origin --tags
-  gpod = push origin --delete
-  ggpush = push origin "$(git_current_branch)"
-  ggp = push origin $(current_branch)
-  gpu = push upstream
-  grb = rebase
-  grba = rebase --abort
-  grbc = rebase --continue
-  grbi = rebase --interactive
-  grbo = rebase --onto
-  grbs = rebase --skip
-  grbd = rebase $(git_develop_branch)
-  grbm = rebase $(git_main_branch)
-  grbom = rebase origin/$(git_main_branch)
-  gr = remote
-  grv = remote --verbose
-  gra = remote add
-  grrm = remote remove
-  grmv = remote rename
-  grset = remote set-url
-  grup = remote update
-  grh = reset
-  gru = reset --
-  grhh = reset --hard
-  grhk = reset --keep
-  grhs = reset --soft
-  gpristine = reset --hard && git clean -dffx
-  groh = reset origin/$(git_current_branch) --hard
-  grs = restore
-  grss = restore --source
-  grst = restore --staged
-  gunwip = rev-list --max-count=1 --format="%s" HEAD grep -q "--wip--" && git reset HEAD~1
-  grev = revert
-  grm = rm
-  grmc = rm --cached
-  gcount = shortlog --summary -n
-  gsh = show
-  gsps = show --pretty=short --show-signature
-  gstall = stash --all
-  gstu = stash --include-untracked
-  gstaa = stash apply
-  gstc = stash clear
-  gstd = stash drop
-  gstl = stash list
-  gstp = stash pop
-  gsta = stash push
-  gsta = stash save
-  gsts = stash show --patch
-  gst = status
-  gss = status --short
-  gsb = status --short -b
-  gsi = submodule init
-  gsu = submodule update
-  gsw = switch
-  gswc = switch -c
-  gswd = switch $(git_develop_branch)
-  gswm = switch $(git_main_branch)
-  gta = tag --annotate
-  gts = tag -s
-  gtv = tag sort -V
-  gignore = update-index --assume-unchanged
-  gunignore = update-index --no-assume-unchanged
-  gwch = whatchanged -p --abbrev-commit --pretty=medium
-  gwt = worktree
-  gwtls = worktree list
-  gwtmv = worktree move
-  gwtrm = worktree remove
+  v = --version
+  i = init
+  gc = gc
+  cf = config
+  cfl = config --list
+  cfla = config --get-regexp alias
+  cflu = config --get-regexp user
+  cfun = config user.name
+  cfue = config user.email
+  st = status
+  sts = status --short
+  stb = status --short --branch
+  df = diff --word-diff
+  dfs = diff --word-diff --staged
+  a = add
+  aa = add --all
+  ap = add --patch
+  au = add --update
+  rs = restore
+  rsa = restore .
+  rss = reset
+  rsh = reset --hard
+  clean = clean -f -d
+  sh = stash
+  shl = stash list
+  shall = stash --all
+  shu = stash --include-untracked
+  sha = stash apply
+  shd = stash drop
+  shcl = stash clear
+  shs = stash show --patch
+  cm = commit --message
+  cmx = commit --no-verify --message
+  cma = commit --no-edit --amend
+  cmax = commit --no-verify --no-edit --amend
+  cmae = commit --amend
+  rev = revert HEAD
+  revn = revert -n HEAD
+  b = branch
+  br = branch --remote
+  ba = branch --all
+  bm = branch --no-merged
+  bd = branch --delete
+  bdf = branch --delete --force
+  brn = branch -m
+  bsup = branch --set-upstream-to=
+  sw = switch
+  swx = switch --discard-changes
+  swc = switch -c
+  ck = checkout
+  ckb = checkout -b
+  mg = merge
+  mgs = merge --squash
+  chp = cherry-pick
+  rb = rebase
+  rbi = rebase -i
+  cl = clone --recurse-submodules
+  fh = fetch
+  fha = fetch --all --prune
+  pl = pull
+  plr = pull --rebase
+  plra = pull --rebase --autostash
+  plo = pull origin
+  pls = pull upstream
+  ps = push
+  psf = push --force
+  psup = push --set-upstream origin
+  pso = push origin --all && git push origin --tags
+  pss = push upstream
+  rr = remote
+  rra = remote add
+  rrrm = remote remove
+  rrmv = remote rename
+  rrset = remote set-url
+  rrup = remote update
+  tg = tag
+  tgd = tag -d
+  rlog = reflog
+  rlog1 = reflog --pretty=oneline --decorate --abbrev-commit
+  rlog2 = reflog --pretty=oneline --decorate --abbrev-commit --all
+  log0 = log --oneline --decorate --all --graph
+  log1 = log --oneline --decorate --all
+  log2 = log --oneline --decorate --graph
+  log3 = log --graph --decorate --all
+  log4 = log --stat
+  ls = ls-files -v
+  lsm = ls-files -v -m
+  lsd = ls-files -v -d
+  sec = bisect
+  secb = bisect bad
+  secg = bisect good
+  secr = bisect reset
+  secs = bisect start
+  bl = blame -w -e
+  us = shortlog --summary
+  usn = shortlog --summary -n
+  hh = help
+  wt = worktree
+  wtls = worktree list
+  wtmv = worktree move
+  wtrm = worktree remove
 ```
