@@ -258,11 +258,116 @@ Todos estos comandos son usados desde el atajo `Ctrl + Shift + p`
 | `Ctrl + P > :`          | Find line into file open    |
 | `F2`                    | Replace symbol              |
 
+| Cmd - Proyecto      | Descripcion                             |
+| ------------------- | --------------------------------------- |
+| `Ctrl + Shif + P`   | Paleta de comandos                      |
+| `Ctrl + P`          | Busqueda de archivos, `@` ir al simbolo |
+| `Ctrl + Shif + Tab` | Navega entre pestañas                   |
+| `Ctrl + F`          | Encontrar en documento, F3=Siguiente    |
+| `Ctrl + Shif + F`   | Encontrar en proyecto                   |
+| `Ctrl + H`          | Reemplazar en documento                 |
+| `Ctrl + shif + H`   | Reemplazar en proyecto                  |
+| `Ctrl + S`          | Guardar Documento                       |
+| `Ctrl + (1,2,3)`    | Split de pantalla 1,2,3 Columnas        |
+| `Ctrl + N`          | Nuevo Documento                         |
+| `Ctrl + F4`         | Cerrar Documento                        |
+| `Ctrl + Shif + T`   | Volver a abrir documento cerrado        |
+
+| Cmd - Archivo           | Descripcion                                          |
+| ----------------------- | ---------------------------------------------------- |
+| `Ctrl + Espacio`        | Sugerencia de completado                             |
+| `Shif + Alt + F`        | Formateado de documento                              |
+| `Ctrl + (Z/Y)`          | Deshacer/Rehacer                                     |
+| `Ctrl + A`              | Seleccionar todo                                     |
+| `Ctrl + X`              | Corta la linea o la seleccion                        |
+| `Ctrl + C`              | Copia la linea o la seleccion                        |
+| `Ctrl + D`              | Agregar una coincidencia y crea cursor               |
+| `Ctrl + F2`             | Agregar Todas las coincidencia y crea cursor         |
+| `Alt + (⬇️/⬆️)`         | Mueve la linea, entre las demas                      |
+| `Alt + (⬅️/➡️)`         | Volver Atras/Adelante, puntos de navegacion          |
+| `Ctrl + Alt + (⬇️/⬆️)`  | Mueve la linea, entre las demas                      |
+| `Shift + Alt + (⬇️/⬆️)` | Agrega cursores arriba y abajo                       |
+| `Inicio/Fin`            | Ir al inicio / ir al final - de la linea             |
+| `Ctrl + (Inicio/Fin)`   | Ir al inicio / ir al final - del archivo             |
+| `Ctrl + (Inicio/Fin)`   | Ir al inicio / ir al final - del archivo             |
+| `Ctrl + G`              | Ir a la linea, luego digite linea:Caracter (30:2)    |
+| `Ctrl + Shif + O`       | Ir al simbolo, Clase, Variable, Metodo               |
+| `Ctrl + }`              | Comenta la linea o la seccion seleccionada           |
+| `Ctrl + Click`          | Ir al archivo o ir a la definicion en codigo         |
+| `F2`                    | Cambiar el nombre de alguna definicion               |
+| `F12`                   | Ir a la definicion                                   |
+| `Ctrl + Shif + U`       | Convertir UpperCase (Requiere Configuracion)         |
+| `Ctrl + Shif + L`       | Convertir LowerCase (Requiere Configuracion)         |
+| `Alt + Shif + 0`        | Plegar Todo                                          |
+| `Alt + Shif + 9`        | Deplegar Todo                                        |
+| `Alt + Shif + 1`        | Plegar Nivel 1                                       |
+| `Alt + Shif + 2`        | Plegar Nivel 2                                       |
+| `Alt + Shif + 3`        | Plegar Nivel 3                                       |
+| `Alt + Shif + 4`        | Plegar Nivel 4                                       |
+| `Alt + Shif + 5`        | Plegar Nivel 5                                       |
+| `Alt + Shif + 6`        | Plegar Nivel 6                                       |
+| `Alt + Shif + 7`        | Plegar todas las regiones excepto la seleccionada    |
+| `Alt + Shif + 8`        | Desplegar todas las regiones excepto la seleccionada |
+
+| Cmd - Pantalla    | Descripcion                                        |
+| ----------------- | -------------------------------------------------- |
+| `F11`             | Pantalla Completa                                  |
+| `Ctrl + B`        | Ocultar/Mostrar la barra lateral                   |
+| `Ctrl + (+/-)`    | Aumenta/Disminuye pantalla                         |
+| `Ctrl + Ñ`        | Ocultar/Mostrar la seccion de comandos             |
+| `Ctrl + ,`        | Configuracion                                      |
+| `Ctrl + Shif + X` | Extenciones                                        |
+| `Ctrl + Shif + W` | Inserta Fragments (Requiere Configuracion)         |
+| `Ctrl + Shif + Q` | Abre Config Fragments (Requiere Configuracion)     |
+| `Ctrl + Shif + V` | Abre Vista previa de MarkDown (Requiere Extencion) |
+
 # Snippets
 
 <sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 Sitio oficial de documentacion [Snippets] VsCode
+
+| Snippet - Global | Descripcion           | Scope  |
+| ---------------- | --------------------- | ------ |
+| `csl`            | Console-Log           | Global |
+| `cse`            | Console-error         | Global |
+| `csw`            | Console-warn          | Global |
+| `cst`            | Console-table         | Global |
+| `log`            | Console-log default   | Global |
+| `error`          | Console-error default | Global |
+| `warn`           | Console-warn default  | Global |
+
+| Snippet - TypeScript | Descripcion           | Scope            |
+| -------------------- | --------------------- | ---------------- |
+| `imp`                | import-module-Object  | typescript react |
+| `impo`               | import-module-default | typescript react |
+| `tsi`                | ts-interface          | typescript react |
+| `tsip`               | ts-interface-prop     | typescript react |
+| `tsix`               | ts-interface-tsx      | typescript react |
+| `tse`                | ts-enum               | typescript react |
+| `tst`                | ts-types              | typescript react |
+| `tstk`               | ts-types-keyvalue     | typescript react |
+| `tsv`                | ts-var                | typescript react |
+| `tsf`                | ts-function           | typescript react |
+| `tsif`               | ts-if                 | typescript react |
+| `tsif1`              | ts-if-else            | typescript react |
+| `tsif2`              | ts-if-2               | typescript react |
+| `tsif3`              | ts-if-3               | typescript react |
+| `tsift`              | ts-if-tern            | typescript react |
+| `tssp`               | ts-spreet             | typescript react |
+| `tssw`               | ts-switch             | typescript react |
+| `tsswv`              | ts-switch-var         | typescript react |
+| `tstry`              | ts-try-catch          | typescript react |
+| `tsthrow`            | ts-throw              | typescript react |
+| `tssort`             | ts-sort               | typescript react |
+| `tsfor`              | ts-forEach            | typescript react |
+| `tsmap`              | ts-map                | typescript react |
+| `tsfil`              | ts-filter             | typescript react |
+| `tsfind`             | ts-find-findIndex     | typescript react |
+| `tssome`             | ts-some-every         | typescript react |
+| `tsflat`             | ts-flat-simple        | typescript react |
+| `tsflatT`            | ts-flat-transform     | typescript react |
+| `tsreducer`          | ts-recuder            | typescript react |
 
 <details>
   <summary>

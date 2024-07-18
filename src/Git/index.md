@@ -32,6 +32,11 @@
   - [VsCode Sniped](#vscode-sniped)
   - [CommitLint Config](#commitlint-config)
   - [Tool for Git client](#tool-for-git-client)
+  - [Manejo de SSH - Entorno Win](#manejo-de-ssh---entorno-win)
+    - [Generar una clave](#generar-una-clave)
+    - [Archivo de configuracion](#archivo-de-configuracion)
+      - [Default GitHub user](#default-github-user)
+      - [Empresa GitHub user](#empresa-github-user)
   - [Doc's](#docs)
   - [Tabla de Commandos y alias](#tabla-de-commandos-y-alias)
     - [Git Setup/Config](#git-setupconfig)
@@ -242,6 +247,74 @@ Especificación para dar significado a los mensajes de los commits haciéndolos 
 - Merge Command: `C:\Users\jasab\AppData\Local\Programs\Microsoft VS Code\Code.exe`
 - Arguments: `-n --wait "$MERGED"`
 
+## Manejo de SSH - Entorno Win
+
+<sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
+
+En el panel de ejecucion (Win + R)
+
+`.ssh` | Enter, te llevara ala ubicacion de las llaves del sistema
+
+---
+
+### Generar una clave
+
+Se genera una nueva clave en nuestro espacio:
+
+- Solo se puede tener una key x email
+- Solo se puede tener registrada una key por host remoto
+- si se adiciona password, este sera requerido en cada validacion de ssh externa
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@examssple.com"
+>> .ssh/$NameKey    (id_rsa_example)
+>> Password (Recomended not password)
+```
+
+Alternativa en la actualidad mas eficiente por algoritmo, de validacion
+
+```bash
+ssh-keygen -t ed25519 -C "your_email@examssple.com"
+>> .ssh/$NameKey    (id_rsa_example)
+>> Password (Recomended not password)
+```
+
+|            |                                                  |
+| ---------- | ------------------------------------------------ |
+| `$NameKey` | Nombre de nuestra nueva clave publica en fichero |
+
+---
+
+### Archivo de configuracion
+
+Para los casos donde se necesiten manejar diferentes host o organizaciones, Se debe de crear un archivo `config` en el directorio `.ssh` sin extensión en la cual se indica
+
+> Host $NameLocal
+>
+> > HostName
+
+#### Default GitHub user
+
+```bash
+Host github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+```
+
+> Ejemplo: $ git clone git@github.com/repositorio.git
+
+#### Empresa GitHub user
+
+```bash
+Host empresa-github.com
+  HostName github.com
+  PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa_empresa
+```
+
+> Ejemplo: $ git clone git@empresa-github.com:empresa/repositorio.git
+
 ## Doc's
 
 <sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
@@ -266,6 +339,7 @@ HEAD~1
 HEAD~5
 --no-verify
 --verbose
+--local
 --global
 
 --continue
@@ -278,9 +352,9 @@ HEAD~5
 
 |     | Alias      | Comando                                          | Descripcion                                           |
 | --- | ---------- | ------------------------------------------------ | ----------------------------------------------------- |
-| ⭐  | `git v`    | `git --version`                                  | version del git.                                      |
+| ⭐  | `--- ---`  | `git --version`                                  | version del git.                                      |
 | ⭐  | `git i`    | `git init`                                       | Creará un nuevo repositorio local GIT. <NameProyect?> |
-| ⭐  | `git gc`   | `git gc`                                         | Activa el garbage colector de git                     |
+| ⭐  | `--- ---`  | `git gc`                                         | Activa el garbage colector de git                     |
 | ⭐  | `git cf`   | `git config`                                     | set configuracion local                               |
 | ⭐  | `git cfl`  | `git config --list`                              | Lista configuracion local                             |
 | ⭐  | `git cfla` | `git config --get-regexp alias`                  | Lista todos los alias                                 |
@@ -365,52 +439,49 @@ HEAD~5
 | ⭐  | `git psup`  | `git push --set-upstream origin`                  |                                                 |
 | ➖  | `git pso`   | `git push origin --all && git push origin --tags` |                                                 |
 | ⭐  | `git pss`   | `git push upstream`                               |                                                 |
-| ⭐  | `git rr`    | `git remote`                                      | Nos permite ver todos los repositorios remotos. |
-| ⭐  | `git rra`   | `git remote add`                                  |                                                 |
-| ⭐  | `git rrrm`  | `git remote remove`                               |                                                 |
-| ⭐  | `git rrmv`  | `git remote rename`                               |                                                 |
-| ➖  | `git rrset` | `git remote set-url`                              |                                                 |
-| ➖  | `git rrup`  | `git remote update`                               |                                                 |
+| ⭐  | `git re`    | `git remote`                                      | Nos permite ver todos los repositorios remotos. |
+| ⭐  | `git rev`   | `git remote -v`                                   | Nos permite ver todos los repositorios remotos. |
+| ⭐  | `git rea`   | `git remote add`                                  |                                                 |
+| ⭐  | `git rerm`  | `git remote remove`                               |                                                 |
+| ⭐  | `git remv`  | `git remote rename`                               |                                                 |
+| ➖  | `git reset` | `git remote set-url`                              |                                                 |
+| ➖  | `git reup`  | `git remote update`                               |                                                 |
 | ⭐  | `git tg`    | `git tag`                                         | Lista los tags o <nameTag> crea una nueva tag   |
 | ⭐  | `git tgd`   | `git tag -d`                                      | Elimina un tag                                  |
 
 ### Git Utils
 
-|     | Alias      | Comando                                      | Descripcion                                                     |
-| --- | ---------- | -------------------------------------------- | --------------------------------------------------------------- |
-| ⭐  | `git rlog` | `git reflog`                                 |                                                                 |
-| ⭐  | `git log0` | `git log --oneline --decorate --all --graph` |                                                                 |
-| ⭐  | `git log1` | `git log --oneline --decorate --all`         |                                                                 |
-| ➖  | `git log2` | `git log --oneline --decorate --graph`       |                                                                 |
-| ➖  | `git log3` | `git log --graph --decorate --all`           |                                                                 |
-| ➖  | `git log4` | `git log --stat`                             |                                                                 |
-| ➖  | `git ls`   | `git ls-files -v`                            | Lista todos los archivos del working dir                        |
-| ➖  | `git lsm`  | `git ls-files -v -m`                         | Lista archivos modificados del working dir                      |
-| ➖  | `git lsd`  | `git ls-files -v -d`                         | Lista archivos eliminados del working dir                       |
-| ➖  | `--- ---`  | `git am`                                     | aplica una serie de parches                                     |
-| ➖  | `--- ---`  | `git apply`                                  | aplica un parche a archivos y/o al índice                       |
-| ➖  | `git sec`  | `git bisect`                                 | Ayuda a encontrar fallos en codigo, partiendo de un commit y va |
-| ➖  | `git secb` | `git bisect bad`                             |                                                                 |
-| ➖  | `git secg` | `git bisect good`                            |                                                                 |
-| ➖  | `git secr` | `git bisect reset`                           |                                                                 |
-| ➖  | `git secs` | `git bisect start`                           |                                                                 |
-| ➖  | `git bl`   | `git blame -w -e`                            | Identifica el autor de cada linea de un archivo                 |
-| ⭐  | `git us`   | `git shortlog --summary`                     | Lista los contribuidores ordenados alfabeticamente              |
-| ⭐  | `git usn`  | `git shortlog --summary -n`                  | Lista los contribuidores ordenados por numero de commits        |
-| ➖  | `git hh`   | `git help`                                   |                                                                 |
-| ⭐  | `git wt`   | `git worktree`                               |                                                                 |
-| ⭐  | `git wtls` | `git worktree list`                          |                                                                 |
-| ⭐  | `git wtmv` | `git worktree move`                          |                                                                 |
-| ⭐  | `git wtrm` | `git worktree remove`                        |                                                                 |
+|     | Alias      | Comando                                                  | Descripcion                                                     |
+| --- | ---------- | -------------------------------------------------------- | --------------------------------------------------------------- |
+| ⭐  | `git rlog` | `git reflog`                                             |                                                                 |
+| ⭐  | `git log1` | `log --graph --decorate --abbrev-commit --all --oneline` |                                                                 |
+| ➖  | `git log4` | `git log --stat`                                         |                                                                 |
+| ➖  | `git ls`   | `git ls-files -v`                                        | Lista todos los archivos del working dir                        |
+| ➖  | `git lsm`  | `git ls-files -v -m`                                     | Lista archivos modificados del working dir                      |
+| ➖  | `git lsd`  | `git ls-files -v -d`                                     | Lista archivos eliminados del working dir                       |
+| ➖  | `--- ---`  | `git am`                                                 | aplica una serie de parches                                     |
+| ➖  | `--- ---`  | `git apply`                                              | aplica un parche a archivos y/o al índice                       |
+| ➖  | `git sec`  | `git bisect`                                             | Ayuda a encontrar fallos en codigo, partiendo de un commit y va |
+| ➖  | `git secb` | `git bisect bad`                                         |                                                                 |
+| ➖  | `git secg` | `git bisect good`                                        |                                                                 |
+| ➖  | `git secr` | `git bisect reset`                                       |                                                                 |
+| ➖  | `git secs` | `git bisect start`                                       |                                                                 |
+| ➖  | `git bl`   | `git blame -w -e -c`                                     | Identifica el autor de cada linea de un archivo                 |
+| ⭐  | `git us`   | `git shortlog --summary -e`                              | Lista los contribuidores ordenados alfabeticamente              |
+| ⭐  | `git usc`  | `git shortlog -e`                                        | Lista los contribuidores ordenados alfabeticamente              |
+| ⭐  | `git usn`  | `git shortlog --summary -n -e`                           | Lista los contribuidores ordenados por numero de commits        |
+| ➖  | `git hh`   | `git help`                                               |                                                                 |
+| ⭐  | `git wt`   | `git worktree`                                           |                                                                 |
+| ⭐  | `git wtls` | `git worktree list`                                      |                                                                 |
+| ⭐  | `git wtmv` | `git worktree move`                                      |                                                                 |
+| ⭐  | `git wtrm` | `git worktree remove`                                    |                                                                 |
 
 ## Alias for .gitconfig
 
 <sup>[⬆️ Inicio](#tabla-de-contenido)</sup>
 
 ```
-  v = --version
   i = init
-  gc = gc
   cf = config
   cfl = config --list
   cfla = config --get-regexp alias
@@ -477,22 +548,24 @@ HEAD~5
   psup = push --set-upstream origin
   pso = push origin --all && git push origin --tags
   pss = push upstream
-  rr = remote
-  rra = remote add
-  rrrm = remote remove
-  rrmv = remote rename
-  rrset = remote set-url
-  rrup = remote update
+  re = remote
+  rev = remote -v
+  rea = remote add
+  rerm = remote remove
+  remv = remote rename
+  reset = remote set-url
+  reup = remote update
   tg = tag
   tgd = tag -d
   rlog = reflog
   rlog1 = reflog --pretty=oneline --decorate --abbrev-commit
   rlog2 = reflog --pretty=oneline --decorate --abbrev-commit --all
-  log0 = log --oneline --decorate --all --graph
-  log1 = log --oneline --decorate --all
-  log2 = log --oneline --decorate --graph
-  log3 = log --graph --decorate --all
-  log4 = log --stat
+  log0 = log --graph --decorate --abbrev-commit --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset) %C(white)%s%C(reset) %C(dim white)- %ae%C(reset)'
+  log1 = log --graph --decorate --abbrev-commit --all --oneline
+  log2 = log --graph --decorate --all --oneline
+  log3 = log --decorate --all --oneline
+  log4 = log --all --oneline
+  log5 = log --stat
   ls = ls-files -v
   lsm = ls-files -v -m
   lsd = ls-files -v -d
@@ -501,9 +574,10 @@ HEAD~5
   secg = bisect good
   secr = bisect reset
   secs = bisect start
-  bl = blame -w -e
-  us = shortlog --summary
-  usn = shortlog --summary -n
+  bl = blame -w -e -c
+  us = shortlog --summary -e
+  usc = shortlog -e
+  usn = shortlog --summary -n -e
   hh = help
   wt = worktree
   wtls = worktree list
