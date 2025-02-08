@@ -514,7 +514,7 @@ HEAD~5
   cmx = commit --no-verify --message
   cma = commit --no-edit --amend
   cmax = commit --no-verify --no-edit --amend
-  cmae = commit --amend
+  cmae = commit --amend -m
   rev = revert HEAD
   revn = revert -n HEAD
   b = branch
@@ -544,7 +544,9 @@ HEAD~5
   plo = pull origin
   pls = pull upstream
   ps = push
+  psx = push --no-verify
   psf = push --force
+  psfx = push --force --no-verify
   psup = push --set-upstream origin
   pso = push origin --all && git push origin --tags
   pss = push upstream

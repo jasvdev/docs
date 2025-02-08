@@ -33,7 +33,7 @@
     - [Prettier](#prettier)
     - [Lint-Staged](#lint-staged)
     - [Generado de versiones](#generado-de-versiones)
-  - [Proyecto Markdown](#proyecto-markdown)
+- [Proyecto Markdown](#proyecto-markdown)
 - [Proyecto React + Vite](#proyecto-react--vite)
   - [Vite + ReactJs + Eslint](#vite--reactjs--eslint)
   - [Eslint + Prettier](#eslint--prettier)
@@ -84,7 +84,7 @@ $ pnpm add --save-dev husky
 ```
 
 ```bash
-$ pnpm exec husky init
+$ pnpx husky init
 ```
 
 ```bash
@@ -94,15 +94,15 @@ $ pnpm i
 - Luego de esto se debe de crear el hook que mejor nos convenga, aqui te dejo la lista de [Hooks]
 
 ```bash
-echo "pnpm run pre-commit" > .husky/pre-commit
+echo "pnpm commit-msg" > .husky/commit-msg
 ```
 
 ```bash
-echo "pnpm run pre-push" > .husky/pre-push
+echo "pnpm pre-push" > .husky/pre-push
 ```
 
 ```bash
-pnpm pkg set scripts.pre-commit="echo 'pre-commit'  && exit 1"
+pnpm pkg set scripts.commit-msg="echo 'commit-msg'  && exit 1"
 ```
 
 ```bash
@@ -161,10 +161,10 @@ export default {
 echo 'foo: bar' | pnpx commitlint
 ```
 
-- Adicional se debe de modificar el comando en el `package.json` para adicional nuestro script de validacion y ejecutarlo en el momento de hacer `pre-commit`
+- Adicional se debe de modificar el comando en el `package.json` para adicional nuestro script de validacion y ejecutarlo en el momento de hacer `commit-msg`
 
 ```bash
-pnpm pkg set scripts.pre-commit="pnpx commitlint --edit"
+pnpm pkg set scripts.commit-msg="pnpx commitlint --edit"
 ```
 
 Luego debemos de modificar el hook del git para que quede de la siguiente forma
@@ -173,7 +173,7 @@ Luego debemos de modificar el hook del git para que quede de la siguiente forma
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm pre-commit ${1}
+pnpm commit-msg ${1}
 ```
 
 - En este punto puedes volver a intentar realizar un commit, el cual te verificara si esta bien escrito segun tus especificaciones y reglas, si pasa de igual forma el exit impedira que se logre por ahora, pero ya verificaras que el linter de commits esta activo
@@ -349,7 +349,7 @@ Ir al archivo `commitlint.config.js` y adicionar el siguiente codigo
 
 ```javascript
 import fs from "fs";
-const scope = [];
+const scope = ["root"];
 const folders = ["./apps/"];
 folders.forEach((folder) => {
   scope.push(fs.readdirSync(folder));
@@ -418,7 +418,7 @@ pnpm pkg set scripts.commit="pnpm scope && git-cz"
 en el archivo `.husky/commit-msg`
 
 ```bash
-pnpm scope && pnpm pre-commit ${1}
+pnpm scope && pnpm commit-msg ${1}
 ```
 
 ##### Agregar bypass Git Emojis
@@ -428,22 +428,31 @@ Si se requiere activar una funcionalidad para que dependiendo del type de commit
 Debemos dirigirnos al archivo `.husky/commit-msg` y agregar el siguiente codigo
 
 ```bash
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+pnpm commit-msg ${1}
+
+pnpm lint-staged
+
 msg="$(cat ${1})"
 type=$(echo "$msg" | cut -d'(' -f1)
 
 case "$type" in
     "feat")
-        resultado=": :fire:"
+        resultado=":fire:"
         ;;
     "fix")
-        resultado=": :bug:"
+        resultado=":bug:"
         ;;
     *)
         resultado=":"
         ;;
 esac
 
-echo ${msg//':'/$resultado} > ${1}
+new_msg="${msg//$resultado/''}"
+new_resultado=": ${resultado}"
+echo ${new_msg//':'/$new_resultado} > ${1}
 ```
 
 Esta parte es manual, por ende si se agrega un nuevo type en `commitlint.config.js` tambien deberia agregarse aqui su respectivo emoji
@@ -512,7 +521,7 @@ Por ultimo edita tus scripts para efectuen el formateo o la validacion donde mas
 en el archivo `.husky/commit-msg`
 
 ```bash
-pnpm prettier && pnpm scope && pnpm pre-commit ${1}
+pnpm prettier && pnpm scope && pnpm commit-msg ${1}
 ```
 
 ### Lint-Staged
@@ -539,7 +548,7 @@ por ultimo debemos modificar donde se debe realizar esta ejecucion, lo que recom
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm pre-commit ${1}
+pnpm commit-msg ${1}
 ....
 .....
 pnpm lint-staged
@@ -560,7 +569,7 @@ tag-version-prefix=""
 message="chore(:rocket:): %s release"
 ```
 
-## Proyecto Markdown
+# Proyecto Markdown
 
 - `index.md`
 

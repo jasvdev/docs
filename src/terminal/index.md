@@ -124,32 +124,143 @@ $ oh-my-posh font install
 - Luego debemos de crear ahora si, nuestro perfil de configuracion, para ello primero creamos el archivo
 
 ```bash
-$ New-Item -Path $PROFILE -Type File -Force
+New-Item -Path $PROFILE -Type File -Force
 ```
 
 - Abrimos nuestro archivo
 
 ```bash
-$ notepad $PROFILE
+notepad $PROFILE
 ```
 
 - Configuramos nuestra invocacion inicial, que llame a `oh-my-posh`
 
 ```bash
-$ oh-my-posh init pwsh | Invoke-Expression
+oh-my-posh init pwsh | Invoke-Expression
 ```
 
 - Despues de esto, ya podras cerrar tu terminal y volverla a abrir, para encontrar el resultado deseado con el theme por defecto
 - Si queremos cambiar el theme de onMyPosh, debemos descargar los temas disponibles y luego actualizar nuestro archivo profile
 
 ```bash
-$ Get-PoshThemes
+Get-PoshThemes
 ```
 
-- Luego debes de actualizar tu archivo de la siguiente manera, cambiando al nombre del tema que requieras
+- Luego debes de actualizar tu archivo de la siguiente manera, cambiando al nombre del tema que requieras de la lista
 
 ```bash
-$  oh-my-posh init pwsh --config 'C:\Users\jasab\AppData\Local\Programs\oh-my-posh\themes\jandedobbeleer.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config 'C:\Users\jasab\AppData\Local\Programs\oh-my-posh\themes\jandedobbeleer.omp.json' | Invoke-Expression
+```
+
+- Puedes tambien tener tu propio archivo personalizado .json para esta finalidad
+
+```bash
+oh-my-posh init pwsh --config 'C:\Github\profile\ohmyposh\jasvdev.omp.json' | Invoke-Expression
+```
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#0077c2",
+          "foreground": "#ffffff",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": " {{ .Name }} ",
+          "type": "shell"
+        },
+        {
+          "background": "#ef5350",
+          "foreground": "#FFFB38",
+          "properties": {
+            "root_icon": "\uf292"
+          },
+          "style": "diamond",
+          "template": "<parentBackground>\ue0b0</> \uf0e7 ",
+          "type": "root"
+        },
+        {
+          "background": "#444444",
+          "foreground": "#E4E4E4",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "style": "full"
+          },
+          "style": "powerline",
+          "template": " {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "#0077c2",
+          "foreground": "#ffffff",
+          "background_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#0077c2{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#0077c2{{ end }}",
+            "{{ if gt .Ahead 0 }}#C792EA{{ end }}",
+            "{{ if gt .Behind 0 }}#C792EA{{ end }}"
+          ],
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "powerline",
+          "template": " {{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "background": "#3C873A",
+          "foreground": "#E4E4E4",
+          "leading_diamond": " \ue0b6",
+          "style": "diamond",
+          "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
+          "trailing_diamond": "\ue0b4",
+          "type": "node"
+        },
+        {
+          "background": "transparent",
+          "foreground": "#ffffff",
+          "invert_powerline": true,
+          "leading_diamond": " \ue0b6",
+          "style": "diamond",
+          "template": " \ue641 {{ .CurrentDate | date .Format }} ",
+          "trailing_diamond": "\ue0b4",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#e0f8ff",
+          "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": "\u276f ",
+          "type": "status"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 2
+}
 ```
 
 - Luego para poderse congfigurar en vsCode, podemos poner nuestra terminal por defecto y la fuente a usar para esta terminal.
@@ -164,7 +275,7 @@ $  oh-my-posh init pwsh --config 'C:\Users\jasab\AppData\Local\Programs\oh-my-po
 - Por ultimo podemos activar un autocompletado mas poderoso que nos entrega nuestra nueva terminal
 
 ```bash
-$ Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -PredictionViewStyle ListView
 ```
 
 ## Sistemas Unix (Linux/MACos)
