@@ -1,0 +1,47 @@
+name: Deploy Docusaurus to GitHub Pages
+on:
+  push:
+    branches: [main] # ajusta si tu rama principal es otra
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  PNPM_VERSION: 10 # centraliza la versión
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      # 1️⃣ Instalar PNPM
+      - uses: pnpm/action-setup@v4
+        with:
+          version: ${{ env.PNPM_VERSION }}
+          run_install: false
+
+      # 2️⃣ Node con caché de PNPM
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      # 3️⃣ Instalar deps y build
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
+
+      # 4️⃣ Sube artefacto para Pages
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: build }
+
+  deploy:
+    needs: build
+    environment: github-pages
+    runs-on: ubuntu-latest
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

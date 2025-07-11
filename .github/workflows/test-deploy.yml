@@ -1,0 +1,25 @@
+name: Test Docusaurus build
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+
+      # 1️⃣ Instalar PNPM (aún sin deps)
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10 # pon la que uses
+          run_install: false # solo instala el binario
+
+      # 2️⃣ Instalar Node + restaurar caché PNPM
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm' # ahora sí existe el binario
+
+      # 3️⃣ Instalar dependencias y compilar
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run build
