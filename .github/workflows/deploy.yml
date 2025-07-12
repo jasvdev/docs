@@ -36,6 +36,8 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - run: pnpm install --frozen-lockfile
+      - name: Check formatting
+        run: pnpm format:check
       - run: pnpm run build
       - name: Release
         run: pnpm run release

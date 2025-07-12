@@ -22,4 +22,6 @@ jobs:
 
       # 3️⃣ Instalar dependencias y compilar
       - run: pnpm install --frozen-lockfile
+      - name: Check formatting
+        run: pnpm format:check
       - run: pnpm run build

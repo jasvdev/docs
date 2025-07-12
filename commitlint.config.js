@@ -8,20 +8,9 @@ module.exports = {
     'type-enum': [
       2,
       'always',
-      [
-        'feat',
-        'fix',
-        'docs',
-        'style',
-        'perf',
-        'test',
-        'build',
-        'chore',
-        'revert',
-        'remove',
-      ],
+      ['feat', 'fix', 'docs', 'style', 'perf', 'test', 'build', 'chore', 'revert', 'remove'],
     ],
     'scope-empty': [2, 'never'],
-    'scope-enum': [2, 'always', ["root", "project"]],
-  }
+    'scope-enum': [2, 'always', ['root', 'project']],
+  },
 };
