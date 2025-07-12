@@ -1,0 +1,111 @@
+{
+  "path": "cz-emoji",
+  "config": {
+    "cz-emoji": {
+      "allowBreakingChanges": ["feat", "fix"],
+      "skipQuestions": ["issues"],
+      "subjectMaxLength": 70,
+      "format": "{type}{scope}: {emoji} {subject}",
+      "scopes": ["root", "project"],
+      "questions": {
+        "type": "Tipo de cambio:",
+        "scope": "Alcance del cambio",
+        "subject": "Descripción corta",
+        "body": "issues relacionadas",
+        "breaking": "Descripcion BREAKING CHANGE"
+      },
+      "types":[        
+        {
+          "emoji": "✨",
+          "code": ":sparkles:",
+          "description": "Introducing new features.",
+          "name": "feat"
+        },
+        {
+          "emoji": "🎉",
+          "code": ":tada:",
+          "description": "Initial commit or first implementation.",
+          "name": "feat"
+        },
+        {
+          "emoji": "🐛",
+          "code": ":bug:",
+          "description": "Fixing bugs.",
+          "name": "fix"
+        },
+        {
+          "emoji": "🚑",
+          "code": ":ambulance:",
+          "description": "Hotfix bugs.",
+          "name": "fix"
+        },
+        {
+          "emoji": "📝",
+          "code": ":memo:",
+          "description": "Adding or updating documentation.",
+          "name": "docs"
+        },
+        {
+          "emoji": "🎨",
+          "code": ":art:",
+          "description": "Adding or updating UI and styling.",
+          "name": "style"
+        },
+        {
+          "emoji": "♻️",
+          "code": ":recycle:",
+          "description": "Refactoring code.",
+          "name": "perf"
+        },
+        {
+          "emoji": "⚡",
+          "code": ":zap:",
+          "description": "Improving performance.",
+          "name": "perf"
+        },
+        {
+          "emoji": "🧪",
+          "code": ":test_tube:",
+          "description": "Adding tests.",
+          "name": "test"
+        },
+        {
+          "emoji": "📂",
+          "code": ":file_folder:",
+          "description": "Improving structure or format of code.",
+          "name": "build"
+        },
+        {
+          "emoji": "🔨",
+          "code": ":hammer:",
+          "description": "Changes to build system.",
+          "name": "build"
+        },
+        {
+          "emoji": "🔧",
+          "code": ":wrench:",
+          "description": "Adding or updating configuration files.",
+          "name": "chore"
+        },
+        {
+          "emoji": "🔖",
+          "code": ":bookmark:",
+          "description": "Releasing or versioning tags.",
+          "name": "chore"
+        },
+        {
+          "emoji": "⏪",
+          "code": ":rewind:",
+          "description": "Reverting changes.",
+          "name": "revert"
+        },
+        {
+          "emoji": "🔥",
+          "code": ":fire:",
+          "description": "Removing code or files.",
+          "name": "remove"
+        }
+      ]
+    }
+  }
+}
