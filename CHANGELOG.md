@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/jasvdev/docs/compare/v0.0.3...v0.0.4) (2025-07-12)
+
+
+### Bug Fixes
+
+* **root:** :bug: fix version ci ([9c21f64](https://github.com/jasvdev/docs/commit/9c21f6473400eb536fb3f31f16131630d52ca02e))
+* **root:** :bug: fix version ci ([44bf1f2](https://github.com/jasvdev/docs/commit/44bf1f2f9c205d5de87cb856a63a3c1f0a1643c8))
+
 ### [0.0.3](https://github.com/jasvdev/docs/compare/v0.0.2...v0.0.3) (2025-07-12)
 
 

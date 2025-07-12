@@ -1,6 +1,6 @@
 {
   "name": "@jasvdev/docs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "install-": "pnpm dlx rimraf node_modules pnpm-lock.yaml package-lock.json && pnpm i",
