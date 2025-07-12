@@ -1,0 +1,19 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### 0.0.1 (2025-07-12)
+
+
+### Features
+
+* **root:** :sparkles: add suport commitlint ([8652707](https://github.com/jasvdev/docs/commit/865270738d252cab58496cb9e17324b45ab951be))
+* **root:** :sparkles: add suport Husky ([1c671fe](https://github.com/jasvdev/docs/commit/1c671fe38df552d1cf7e5ed49c6c9d3846dfc214))
+* **root:** :sparkles: add support emojis in commits and fix format ([22713ef](https://github.com/jasvdev/docs/commit/22713ef4dd850073e51fff0e7294880b45117f5c))
+* **root:** :sparkles: add support to release and changelog.md ([67a9a2c](https://github.com/jasvdev/docs/commit/67a9a2ce84fd1ee3f7f554155df3438b7453d891))
+* **root:** :tada: initial commit ([1ea991b](https://github.com/jasvdev/docs/commit/1ea991b52b41630de643b3aa839fa5466c6c9c7f))
+
+
+### Bug Fixes
+
+* **root:** :bug: delete dependecie and fix command ([989d8d7](https://github.com/jasvdev/docs/commit/989d8d7971ce272903294984f7ac0db8f8d52c5c))
