@@ -21,7 +21,7 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "lint:check": "eslint . --ext .js,.jsx,.ts,.tsx --max-warnings 0",
-    "release": "standard-version",
+    "release": "standard-version --no-verify",
     "release:first": "standard-version --first-release --no-verify",
     "release:minor": "standard-version --release-as minor --no-verify",
     "release:major": "standard-version --release-as major --no-verify"
