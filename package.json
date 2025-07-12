@@ -16,7 +16,8 @@
     "typecheck": "tsc",
     "prepare": "husky",
     "pre-commit": "echo 'Ejecutando test que falla...'",
-    "commit-msg": "echo 'commit-msg' && && exit 1"
+    "commit-msg": "echo 'commit-msg' && exit 1",
+    "commit": "cz"
   },
   "dependencies": {
     "@docusaurus/core": "3.8.1",
@@ -28,9 +29,13 @@
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@docusaurus/module-type-aliases": "3.8.1",
     "@docusaurus/tsconfig": "3.8.1",
     "@docusaurus/types": "3.8.1",
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.1.7",
     "typescript": "~5.6.2"
   },
@@ -45,6 +50,11 @@
       "last 3 firefox version",
       "last 5 safari version"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "engines": {
     "node": ">=18.0"
