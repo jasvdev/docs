@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/jasvdev/docs/compare/v0.0.2...v0.0.3) (2025-07-12)
+
+
+### Features
+
+* **root:** :sparkles: add support esLint ([0583a5e](https://github.com/jasvdev/docs/commit/0583a5e4b43d1dae5fe651afe3478b694414e79d))
+
 ### [0.0.2](https://github.com/jasvdev/docs/compare/v0.0.1...v0.0.2) (2025-07-12)
 
 
