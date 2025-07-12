@@ -31,8 +31,16 @@ jobs:
           cache: 'pnpm'
 
       # 3️⃣ Instalar deps y build
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build
+      - name: Release
+        run: pnpm run release
+      - name: Push changes
+        run: git push --follow-tags origin main
 
       # 4️⃣ Sube artefacto para Pages
       - uses: actions/upload-pages-artifact@v3
