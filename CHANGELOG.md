@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.2](https://github.com/jasvdev/docs/compare/v0.0.1...v0.0.2) (2025-07-12)
+
+
+### Features
+
+* **root:** :sparkles: add support prettier ([ee06ab1](https://github.com/jasvdev/docs/commit/ee06ab1cc968cce022641bbcc089dfde9c486713))
+
 ### 0.0.1 (2025-07-12)
 
 
