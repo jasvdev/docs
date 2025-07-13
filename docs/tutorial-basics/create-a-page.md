@@ -32,8 +32,6 @@ A new page is now available at [http://localhost:3000/my-react-page](http://loca
 
 ## Create your first Markdown Page
 
-Create a file at `src/pages/my-markdown-page.md`:
-
 ```mdx title="src/pages/my-markdown-page.md"
 # My Markdown page
 

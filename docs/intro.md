@@ -2,46 +2,49 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# 📚 Docs Developer
 
-Let's discover **Docusaurus in less than 5 minutes**.
+¡Bienvenido/a! Este proyecto nació como **un repositorio vivo de todo lo que aprendo y experimento en tecnología**. Aquí conservo mis apuntes, guías y reflexiones para consultarlas más tarde y compartirlas con quien las necesite. Si llegaste hasta aquí, siéntete libre de explorar, clonar y adaptar lo que te sirva.
 
-## Getting Started
+---
 
-Get started by **creating a new site**.
+## 🚀 Propósito
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+1. **Centralizar conocimiento**  
+   Consolidar en un solo lugar notas que normalmente quedarían dispersas entre cuadernos, wikis y repositorios.
 
-### What you'll need
+2. **Aprender haciendo**  
+   Escribir, diagramar y versionar mis descubrimientos me ayuda a interiorizar conceptos y buenas prácticas.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+3. **Facilitar la reutilización**  
+   Al documentar cada paso, puedo replicar configuraciones o proyectos sin empezar desde cero.
 
-## Generate a new site
+---
 
-Generate a new Docusaurus site using the **classic template**.
+## 🗂️ Qué encontrarás
 
-The classic template will automatically be added to your project after you run the command:
+| Sección                    | Descripción breve                                                          |
+| -------------------------- | -------------------------------------------------------------------------- |
+| **Guías prácticas**        | Tutoriales paso a paso sobre herramientas, frameworks y flujos de trabajo. |
+| **Snippets & Cheatsheets** | Fragmentos de código y atajos de uso frecuente para ahorrar tiempo.        |
+| **Apuntes teóricos**       | Resúmenes de libros, cursos o charlas técnicas.                            |
+| **Referencias rápidas**    | Tablas, diagramas y comandos esenciales.                                   |
 
-```bash
-pnpm init docusaurus@latest @jasvdev/docs classic
-```
+---
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## ⚠️ Descargo de responsabilidad
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+Toda la información refleja _mi_ experiencia y contexto.  
+Puede que ciertos pasos varíen según sistema operativo, versión de la herramienta o necesidades de tu proyecto.  
+**Verifica siempre** la documentación oficial cuando sea necesario.
 
-## Start your site
+---
 
-Run the development server:
+## 📬 Comentarios y feedback
 
-```bash
-cd ./docs
-npm run start
-```
+Aunque es un archivo personal, los _issues_ y _pull requests_ están abiertos:
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+- **Issues:** para reportar errores o proponer mejoras.
+- **PRs:** si quieres aportar ejemplos, correcciones o nuevas secciones.
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+¡Gracias por pasar y felices commits! 🚀
