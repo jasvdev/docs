@@ -2,11 +2,19 @@
   "path": "cz-emoji",
   "config": {
     "cz-emoji": {
-      "allowBreakingChanges": ["feat", "fix"],
-      "skipQuestions": ["issues"],
+      "allowBreakingChanges": [
+        "feat",
+        "fix"
+      ],
+      "skipQuestions": [
+        "issues"
+      ],
       "subjectMaxLength": 70,
       "format": "{type}{scope}: {emoji} {subject}",
-      "scopes": ["root", "project"],
+      "scopes": [
+        "root",
+        "project"
+      ],
       "questions": {
         "type": "Tipo de cambio:",
         "scope": "Alcance del cambio",
@@ -14,7 +22,7 @@
         "body": "issues relacionadas",
         "breaking": "Descripcion BREAKING CHANGE"
       },
-      "types":[        
+      "types": [
         {
           "emoji": "✨",
           "code": ":sparkles:",
