@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.5](https://github.com/jasvdev/docs/compare/v0.0.4...v0.0.5) (2025-07-13)
+
+
+### Features
+
+* **root:** :sparkles: add Git docs ([439eb44](https://github.com/jasvdev/docs/commit/439eb449ce29ec85336d46e2ea1f9efba2e7f884))
+
 ### [0.0.4](https://github.com/jasvdev/docs/compare/v0.0.3...v0.0.4) (2025-07-12)
 
 
