@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Get Started
+# Acerca de
 
 Git es un sistema de control de versiones distribuido gratuito y de código abierto diseñado para manejar todo, desde proyectos pequeños hasta proyectos muy grandes, incluso documentación personal, [sitio oficial].
 
