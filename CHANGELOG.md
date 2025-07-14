@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/jasvdev/docs/compare/v0.0.5...v0.0.6) (2025-07-14)
+
+
+### Features
+
+* **root:** :sparkles: Remove docs innesesaty and add docs vsCode ([7163c80](https://github.com/jasvdev/docs/commit/7163c80f78b1f2f557f1b46e626275b24b6baee7))
+
 ### [0.0.5](https://github.com/jasvdev/docs/compare/v0.0.4...v0.0.5) (2025-07-13)
 
 
