@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/jasvdev/docs/compare/v0.0.7...v0.0.8) (2025-07-16)
+
+
+### Bug Fixes
+
+* **root:** :bug: fix title block code ([83aeb0b](https://github.com/jasvdev/docs/commit/83aeb0bcdfeb74a0e6f9e56d98b166166467c71c))
+
 ### [0.0.7](https://github.com/jasvdev/docs/compare/v0.0.6...v0.0.7) (2025-07-16)
 
 
