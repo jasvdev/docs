@@ -20,6 +20,12 @@ git config --global diff.tool vscode
 git config --global core.autocrlf true
 ```
 
+> Con esta configuración, cuando hagas `git push` en una rama nueva, Git automáticamente creará la rama remota y establecerá el upstream.
+
+```bash
+git config --global push.autoSetupRemote true
+```
+
 > Establece VS Code como editor predeterminado para Git. `--wait` hace que Git espere hasta cerrar el editor.
 
 ```bash

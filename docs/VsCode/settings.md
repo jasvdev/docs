@@ -4,7 +4,7 @@
 
 Estas son las configuraciones generales que siempre uso al momento de adaptar el vsCode a mi estilo de desarrollo
 
-```json
+```json title="setting.json"
 {
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.activityBar.location": "top",
@@ -45,9 +45,7 @@ Estas son las configuraciones generales que siempre uso al momento de adaptar el
 
 ## Custom Labels
 
-`setting.json`
-
-```json
+```json title="setting.json"
   "workbench.editor.customLabels.patterns": {
     "**/*": "${dirname}/${filename}.${extname}"
   },
@@ -65,7 +63,7 @@ Esto se conoce como [customize-tab-labels](https://code.visualstudio.com/docs/ge
     `setting.json`
   </summary>
 
-```json
+```json title="setting.json"
 {
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.enabled": true,
@@ -119,9 +117,7 @@ En este ejemplo utilizaremos [Cascadia Code](https://github.com/microsoft/cascad
 - Despues de que este instala en nuestro sistema debemos activar la fuente en el editor, asi como el soporte de ligaduras si la fuente lo soporta
 - Luego se debe de reiniciar el editor completamente y ya lo tendremos listo.
 
-`setting.json`
-
-```json
+```json title="setting.json"
 {
   "editor.fontFamily": "'Cascadia Code',Consolas, 'Courier New', monospace",
   "editor.fontLigatures": true,
@@ -178,7 +174,7 @@ oh-my-posh font install
 >
 > Para modificar los colores de nuestra terminar, **windows** nos ofrece un juego de **[temas](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes)**, o si quieres tener una personalizada tambien la puedes crear, aqui utilizamos una variante de [One Half Dark](https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes#one-half-dark)
 
-```json
+```json title="profiles.defaults"
 {
   "profiles": {
     "defaults": {
@@ -253,7 +249,7 @@ oh-my-posh init pwsh --config 'C:\Users\AppData\Local\Programs\oh-my-posh\themes
   <summary>
   custom.omp.json
   </summary>
-  ```json
+  ```json title="custom.omp.json"
   {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "blocks": [

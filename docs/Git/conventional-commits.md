@@ -47,9 +47,7 @@ El contenido de los mensajes debe ser en ingles
 
 [commitlint.js](https://commitlint.js.org/guides/getting-started.html) Sirve para validar la integridad de mensajes de confirmación dando retroalimentación corta al revisar los mensajes de confirmación justo en el momento en que se crean.
 
-> Mi configuracion `commitlint.config.js`
-
-```js
+```js title="commitlint.config.js"
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   formatter: '@commitlint/format',
@@ -76,9 +74,7 @@ module.exports = {
 
 [cz-emoji](https://github.com/ngryman/cz-emoji) es una extecion se **Commitizen** que nos pertime manejar una configuracion extendida y un manejo de emojis de forma mucho mas amigable, combinar estas dos hace que la semantica sea muy agradable y entendida al momento de visualizar cambios en el repositorio
 
-> Mi configuracion `.czrc`
-
-```json
+```json title=".czrc"
 {
   "path": "cz-emoji",
   "config": {
@@ -206,9 +202,7 @@ pnpm add -D commitizen cz-emoji
 pnpm pkg set config.commitizen.path="cz-emoji"
 ```
 
-> Mi configuracion `package.json`
-
-```json
+```json title="package.json"
 {
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
