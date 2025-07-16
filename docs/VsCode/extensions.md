@@ -16,7 +16,7 @@ Para instalar todas estas extensiones automáticamente:
   Listado Completo de Extensiones
   </summary>
 
-```json
+```json title="extensions.json"
 {
   "recommendations": [
     "adpyke.codesnap",
@@ -75,9 +75,7 @@ Para instalar todas estas extensiones automáticamente:
 **Descripción:** Proporciona iconos coloridos y modernos para archivos y carpetas basados en Material Design, mejorando la experiencia visual del explorador.  
 **Documentación:** [material-icon-theme](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 
-| settings.json
-
-```json
+```json title="settings.json"
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.folders.associations": {
     "sdk": "Controller"
@@ -98,7 +96,7 @@ Para instalar todas estas extensiones automáticamente:
   settins.json
   </summary>
 
-```json
+```json title="settins.json"
 {
   "activitusbar.views": [
     {
@@ -203,7 +201,7 @@ Para instalar todas estas extensiones automáticamente:
   settins.json
   </summary>
 
-```json
+```json title="settins.json"
     "todo-tree.filtering.excludeGlobs": [
     "**/node_modules/**",
     "**/dist/**",
@@ -321,9 +319,7 @@ Para instalar todas estas extensiones automáticamente:
 **Descripción:** Resalta colores en CSS, HTML y otros archivos mostrando el color real como fondo.  
 **Documentación:** [color-highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
 
-| settings.json
-
-```json
+```json title="settins.json"
 {
   "color-highlight.markerType": "underline"
 }
@@ -513,9 +509,7 @@ Para instalar todas estas extensiones automáticamente:
 **Descripción:** Traduce texto seleccionado usando Google Translate directamente desde el editor.  
 **Documentación:** [vscode-google-translate](https://marketplace.visualstudio.com/items?itemName=funkyremi.vscode-google-translate)
 
-| settings.json
-
-```json
+```json title="settins.json"
 {
   "vscodeGoogleTranslate.preferredLanguage": "English"
 }

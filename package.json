@@ -14,7 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "prepare": "husky",
-    "commit": "cz",
+    "cm": "cz",
     "format": "prettier '**/*.{js,jsx,ts,tsx,md,mdx}' --write",
     "format:check": "prettier '**/*.{js,jsx,ts,tsx,md,mdx}' --check",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
