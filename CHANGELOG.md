@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/jasvdev/docs/compare/v0.0.9...v0.0.10) (2025-08-13)
+
+
+### Features
+
+* **project:** :sparkles: add doc pricing alGroup ([db34f7b](https://github.com/jasvdev/docs/commit/db34f7beb7c58306fb6f4bd4518b211eefe9376f))
+
 ### [0.0.9](https://github.com/jasvdev/docs/compare/v0.0.8...v0.0.9) (2025-07-16)
 
 
