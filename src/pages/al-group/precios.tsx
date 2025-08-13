@@ -101,7 +101,7 @@ export default function Home(): ReactNode {
               </div>
             ))}
             <div className={styles.priceLabel}>
-              <b>Nota: </b>El turno nocturno tiene un descuento del 30%
+              <b>Nota: </b>El turno nocturno tiene un descuento del 30% sobre el precio de la hora.
             </div>
           </div>
         </div>

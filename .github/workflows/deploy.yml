@@ -39,8 +39,6 @@ jobs:
       - name: Check formatting
         run: pnpm format:check
       - run: pnpm run build
-      - name: Release
-        run: pnpm run release
       - name: Push changes
         run: git push --follow-tags origin main
 
