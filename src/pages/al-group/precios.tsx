@@ -14,24 +14,17 @@ export default function Home(): ReactNode {
     },
     {
       title: 'Sensación Virtual',
-      permanence: '4-6',
+      permanence: '4-12',
       pricePerHour: '$4.750',
       pricePerFortnight: '$500.000',
       className: styles['sensacionVirtual'],
     },
     {
       title: 'Diva Virtual',
-      permanence: '6-12',
+      permanence: '+12',
       pricePerHour: '$6.000',
       pricePerFortnight: '$630.000',
       className: styles['divaVirtual'],
-    },
-    {
-      title: 'Diosa del Show',
-      permanence: '+12',
-      pricePerHour: '$7.250',
-      pricePerFortnight: '$765.000',
-      className: styles['diosaShow'],
     },
   ];
 
@@ -63,7 +56,7 @@ export default function Home(): ReactNode {
               <div className={styles.singleRow}>
                 <div className={styles.priceGroup}>
                   <div className={styles.priceItem}>
-                    <div className={styles.priceLabel}>PERMANENCIA MESES</div>
+                    <div className={styles.priceLabel}>DURACION MESES</div>
                     <div className={styles.priceValue}>{packageInfo.permanence}</div>
                   </div>
                   <div className={styles.priceItem}>
